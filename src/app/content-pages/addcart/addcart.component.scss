@@ -1,0 +1,65 @@
+.card {
+    height: 60vh;
+    margin: 25px;
+    padding: 25px;
+    background: #e2eaef;
+    box-shadow: 3px 2px 39px -3px #888888;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.head {
+    border: none;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.emptycart {
+    border-radius: 20px !important;
+    width: 230px !important;
+    margin-top: 50px;
+}
+
+.productimg {
+    border-radius: 30px !important;
+    height: 184px;
+    width: 150px;
+}
+
+.con {
+    width: 62%;
+}
+
+.card-table {
+    justify-content: center;
+    display: flex;
+    background-color: azure;
+    border-radius: 150px;
+    text-align: center;
+}
+
+.btn {
+    border: none;
+}
+
+.table td,
+.table th {
+    padding: 1.75rem;
+    vertical-align: baseline;
+    border: none
+}
+
+.fwrap {
+    flex-wrap: wrap;
+}
+
+.mob {
+    justify-content: center;
+    display: flex;
+    background-color: azure;
+    border-radius: 29px;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}

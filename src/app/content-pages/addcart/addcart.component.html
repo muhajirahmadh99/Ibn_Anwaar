@@ -1,0 +1,74 @@
+<!-- <div class="container mt-4 mb-4 bg-light">
+    <a routerLink="/menu" class="placeorder">Back</a>
+    <div class="row">
+        <div class="col-lg-6 mt-3" *ngIf="menudata">
+            <div class="carbox">
+                <img src="{{menudata[0].carimg}}" />
+                <h1>{{menudata[0].name}}</h1>
+                <p>{{menudata[0].price | currency : 'USD'}}</p>
+            </div>
+           
+        </div> -->
+
+        <!-- Dexktop View -->
+        <!-- <ng-container *ngIf="product.length !=0 && !service.isMobile">
+            <div class="container">
+                <div class="card-table mt-3 mb-3" >
+                    <div class="card-products">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>S.NO</th>
+                                    <th>Product Name</th>
+                                    <th>Product Image</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of product;let i = index">
+                                    <td>{{i+1}}</td>
+                                    <td>{{item.head}}</td>
+                                    <td>  <img src="{{item.carimg}}" class="productimg">  </td>
+                                    <td> <p [innerHTML]="item.price"></p></td>
+                                    <td> <div class="btn btn-primary" (click)="removeitem(item)"><i class="bi bi-trash"></i></div> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    
+        </ng-container> -->
+       
+<!-- Mobile View -->
+
+<!-- <div class="container con" *ngIf="service.isMobile"></div> -->
+<div class="container con ">
+    <div class="row mb-3 mob"*ngFor="let item of product;let i = index">
+      <div class="col-md-2">  <div class="mt-2">{{i+1}}</div></div>
+      <div class="col-md-2"><div class="mt-2">{{item.head}}</div></div>
+      <div class="col-md-2"><div class=""><img src="{{item.carimg}}" class="productimg"></div></div>
+      <div class="col-md-2"><div class=""><p [innerHTML]="item.price"></p></div></div>
+      <div class="col-md-2"> <div class="c"><div class="btn btn-primary" (click)="removeitem(item)"><i class="bi bi-trash"></i></div></div></div>
+    </div>
+</div>
+
+        <ng-container *ngIf="product.length === 0">
+            <div class="container" >
+               
+                    <div class="card mt-3">
+                        <div class="head"><b>My Cart</b> </div>
+                        <div class="">
+                            <img src="assets/addcart.png" class="emptycart flex wrap">
+                            <h4 class="">Your Cart is Empty</h4>
+                            <h6>Add into item Now!</h6>
+                            <div class="btn btn-primary" routerLink="">Shop Now</div>
+                        </div>
+                    </div>
+                   
+                   
+            </div>
+        </ng-container>
+        
+      
