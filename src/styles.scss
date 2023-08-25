@@ -4,6 +4,25 @@
     margin: 0;
     padding: 0;
 }
+
+// scroll to top
+.arrow{
+	display: flex;
+	justify-content: flex-end;
+	cursor: pointer;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	.bi{
+		font-size: 34px;
+		color: #4185af;
+	}
+	.bi:hover{
+		color: #92999f;
+	}
+}
+
+// scroll to top
 body{
     background: #e2eaef;
     font-size: 18px;

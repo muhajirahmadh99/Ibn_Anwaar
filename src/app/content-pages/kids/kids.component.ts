@@ -10,18 +10,25 @@ import { GlobalService } from 'src/app/services/global.service';
 })
 export class KidsComponent implements OnInit {
 
-  constructor(private cartservice : AddcartService,public service : GlobalService) { }
+  constructor(private cartservice: AddcartService, public service: GlobalService) { }
 
   ngOnInit(): void {
-    const timeline = gsap.timeline({ defaults:{duration : 0.8}})
+    const timeline = gsap.timeline({ defaults: { duration: 0.8 } })
     timeline
-      .from('h2',{y: '-100%',ease : 'bounce'})
-      .from('.anim',{x: -160,stagger:0.1,ease : "back"})
+      .from('h2', { y: '-100%', ease: 'bounce' })
+      .from('.anim', { x: -160, stagger: 0.1, ease: "back" })
   }
 
-addToCart(data : any){
-  this.cartservice.addtocart(data);
-}
+  addToCart(data: any) {
+    this.cartservice.addtocart(data);
+  }
 
+  scrolltop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+  }
 
 }

@@ -6,6 +6,7 @@ body {
 .contact-form {
     padding: 30px;
     margin: 8px 0;
+    min-height: calc(68vh - 101px);
 }
 .contact-form h1 {
     text-transform: uppercase;

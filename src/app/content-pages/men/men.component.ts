@@ -23,5 +23,11 @@ export class MenComponent implements OnInit {
 addToCart(data : any){
   this.cartservice.addtocart(data);
 }
-
+scrolltop() {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  })
+}
 }
