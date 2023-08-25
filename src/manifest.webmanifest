@@ -1,7 +1,7 @@
 {
   "name": "IbnAnwaar",
   "short_name": "IbnAnwaar",
-  "theme_color": "#1976d2",
+  "theme_color": "#4185af",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
