@@ -7,14 +7,14 @@ import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 })
 export class GlobalService {
   // public tl = gsap.timeline();
-  mobileWidth = 770;
-  isMobile = false;
+  // mobileWidth = 770;
+  // isMobile = false;
   constructor(private router: Router) {
 
 
     // if (document.body.clientWidth <= this.mobileWidth) {
-    this.isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/)) ? true : false;
-    console.log(this.isMobile)
+    // this.isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/)) ? true : false;
+    // console.log(this.isMobile)
     // }
   }
 
