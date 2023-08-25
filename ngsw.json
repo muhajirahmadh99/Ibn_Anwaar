@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1692943891120,
+  "timestamp": 1692945345516,
   "index": "https://muhajirahmadh99.github.io/Ibn_Anwaar/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/favicon.ico",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/index.html",
-        "https://muhajirahmadh99.github.io/Ibn_Anwaar/main.121e3b89050be91b.js",
+        "https://muhajirahmadh99.github.io/Ibn_Anwaar/main.c3b2b6cadf08e8e4.js",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/manifest.webmanifest",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/polyfills.50de3ae21dd92b19.js",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/runtime.fb7cab9f2605ac5d.js",
@@ -31,7 +31,6 @@
       },
       "urls": [
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/addcart.png",
-        "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/des.png",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/desert.png",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/giphy.gif",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/gpay.jpeg",
@@ -82,7 +81,7 @@
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/women/women7.png",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/women/women8.png",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/women/women9.png",
-        "https://muhajirahmadh99.github.io/Ibn_Anwaar/desert.5ed621d9515f541a.png"
+        "https://muhajirahmadh99.github.io/Ibn_Anwaar/desert.7fd7dca4d70c3278.png"
       ],
       "patterns": []
     }
@@ -90,8 +89,7 @@
   "dataGroups": [],
   "hashTable": {
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/addcart.png": "d37ef979389f301a58e4efb94db20dabf9bf3162",
-    "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/des.png": "3fdeab9774328ad8e87dfd5540d52dc0f7534a78",
-    "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/desert.png": "a551243a53353d6c64652ee27954b6722ac6a661",
+    "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/desert.png": "d124a1e744754e826e13223a3e33e877f68692fa",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/giphy.gif": "90dd6e5d86a58ab20f62fe2720da06a61e69a4ef",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/gpay.jpeg": "9a5eff85ff899dcb3ac6448c9e5e3d5018172f06",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/icons/icon-128x128.png": "d9e2037123935f4e5fc78b5febfe5c1443e68395",
@@ -141,11 +139,11 @@
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/women/women7.png": "f11de2f768a353c92829d79b8271970aa8e077fc",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/women/women8.png": "770d02954fd9f33379fbaee6ce0573d8d6086938",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/women/women9.png": "2ed4a1c8c4f11c122297bc3a4c0c544243c71e69",
-    "https://muhajirahmadh99.github.io/Ibn_Anwaar/desert.5ed621d9515f541a.png": "a551243a53353d6c64652ee27954b6722ac6a661",
+    "https://muhajirahmadh99.github.io/Ibn_Anwaar/desert.7fd7dca4d70c3278.png": "d124a1e744754e826e13223a3e33e877f68692fa",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/favicon.ico": "653c7e77672eb91d1e47a0b5fea5a26ae098805d",
-    "https://muhajirahmadh99.github.io/Ibn_Anwaar/index.html": "7c6a319d5314adddb84cb5e8cce4a228b22b955e",
-    "https://muhajirahmadh99.github.io/Ibn_Anwaar/main.121e3b89050be91b.js": "49d75bc6b7e10a6fa9930186d8e8adca6bd31b70",
-    "https://muhajirahmadh99.github.io/Ibn_Anwaar/manifest.webmanifest": "96c291da5b7d19d549dfafbf151629c2f56b9e6b",
+    "https://muhajirahmadh99.github.io/Ibn_Anwaar/index.html": "89b1cf55be12d21dbdd4d5ce746c30a7e2f7fdba",
+    "https://muhajirahmadh99.github.io/Ibn_Anwaar/main.c3b2b6cadf08e8e4.js": "4115cb5f242ee6d0c9dd7b2db0891d61a001ac22",
+    "https://muhajirahmadh99.github.io/Ibn_Anwaar/manifest.webmanifest": "0920260c45255be3a82380a0a89e770a7cb4f78a",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/polyfills.50de3ae21dd92b19.js": "7954692bd23ee34d8bb7f925e1238529f48e803d",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/runtime.fb7cab9f2605ac5d.js": "7bd477420fc7441ca692cc6bb7f095934ab71029",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/scripts.4b481c0996a087c9.js": "76fa23108a6758c9cd2f1064237e5a32922eb457",
