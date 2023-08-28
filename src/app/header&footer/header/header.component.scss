@@ -1,7 +1,7 @@
 nav {
     font-weight: bold;
     border-color: #4185af;
-    border-width: 10px 10px 10px 10px;
+    border-width: 10px 10px 7px 10px;
     border-style: solid;
     display: flex;
     flex-direction: column;
@@ -38,13 +38,17 @@ nav {
     display: flex;
     flex-wrap: wrap;
     gap: 9px;
-
+    margin-left: 6px;
     .btn {
         color: white;
         background-color: #747d89;
-        border-radius: 20px;
+        border-radius: 30px;
         border: none;
-        padding: 13px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        height: 60px;
     }
 
     .btn:hover {
