@@ -13,12 +13,16 @@ nav {
     border-bottom: 5px solid #4185af;
     width: fit-content;
     line-height: 1;
-
+    border-radius: 7px;
 }
 
 .nav-link:hover {
     border-radius: 7px;
     color: rgb(0, 0, 0) !important;
+    color: #4185af;
+    border-bottom: 5px solid #4185af;
+    width: fit-content;
+    line-height: 1;
 }
 
 .navbar-toggler {
@@ -42,13 +46,13 @@ nav {
     .btn {
         color: white;
         background-color: #747d89;
-        border-radius: 30px;
+        border-radius: 15px;
         border: none;
         padding: 10px;
         display: flex;
         align-items: center;
         text-align: center;
-        height: 60px;
+        height: 45px;
     }
 
     .btn:hover {

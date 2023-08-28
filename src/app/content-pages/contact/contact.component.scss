@@ -7,24 +7,27 @@ body {
     padding: 30px;
     margin: 8px 0;
     min-height: calc(68vh - 101px);
+    .btn {
+        color: white;
+        background-color: #747d89;
+        border-radius: 15px;
+        border: none;
+    }
+
+    .btn:hover {
+        color: #f1efef;
+        background: rgb(61, 60, 60);
+    }
 }
 .contact-form h1 {
     text-transform: uppercase;
     margin: 0 0 15px;
 }
-.contact-form .form-control, .contact-form .btn  {
-    min-height: 38px;
-    border-radius: 2px;
-}
-.contact-form .btn-primary {
-    min-width: 150px;
-    background: #89051f;
-    border: none;
+.contact-form .form-control, .contact-form{
+    min-height: 61px;
     border-radius: 10px;
 }
-.contact-form .btn-primary:hover {
-    background: #a54142; 
-}
+
 .contact-form label {
     opacity: 0.9;
 }
