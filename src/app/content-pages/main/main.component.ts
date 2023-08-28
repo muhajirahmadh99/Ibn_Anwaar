@@ -39,13 +39,6 @@ export class MainComponent implements OnInit {
   addToCart(data: any) {
     this.cartservice.addtocart(data);
   }
-  scrolltop() {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    })
-  }
   flipcard = [
     {
       img: "assets/2.svg",

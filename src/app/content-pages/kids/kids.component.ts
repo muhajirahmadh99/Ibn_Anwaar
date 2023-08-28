@@ -23,12 +23,5 @@ export class KidsComponent implements OnInit {
     this.cartservice.addtocart(data);
   }
 
-  scrolltop() {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    })
-  }
 
 }

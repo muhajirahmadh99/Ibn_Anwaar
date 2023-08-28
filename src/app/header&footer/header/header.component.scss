@@ -1,12 +1,19 @@
 nav {
     font-weight: bold;
-    // border-radius: 40px;
-    // margin-bottom: 15px;
+    border-color: #4185af;
+    border-width: 10px 10px 10px 10px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 0px 30px 30px;
 }
 
 .nav-link.active-link {
-    color: rgb(96, 186, 202) !important;
-    font-weight: bold;
+    color: #4185af;
+    border-bottom: 5px solid #4185af;
+    width: fit-content;
+    line-height: 1;
+
 }
 
 .nav-link:hover {
@@ -24,11 +31,13 @@ nav {
 
 .navbar-expand-lg .navbar-nav {
     gap: 10px;
+    margin-left: 10px;
 }
 
 .logbtn {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 9px;
 
     .btn {
         color: white;

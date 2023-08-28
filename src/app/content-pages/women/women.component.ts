@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component,HostListener, OnInit, AfterViewInit } from '@angular/core';
 import { gsap } from 'gsap';
 import { AddcartService } from 'src/app/services/addcart.service';
 import { GlobalService } from 'src/app/services/global.service';
@@ -23,11 +23,5 @@ export class WomenComponent implements OnInit {
   addToCart(data: any) {
     this.cartservice.addtocart(data);
   }
-  scrolltop() {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    })
-  }
+  
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { gsap, TimelineMax, Power0 } from 'gsap';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
@@ -6,17 +6,8 @@ import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
   providedIn: 'root'
 })
 export class GlobalService {
-  // public tl = gsap.timeline();
-  // mobileWidth = 770;
-  // isMobile = false;
-  constructor(private router: Router) {
 
-
-    // if (document.body.clientWidth <= this.mobileWidth) {
-    // this.isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/)) ? true : false;
-    // console.log(this.isMobile)
-    // }
-  }
+  constructor(private router: Router) { }
 
   // MAIN
 
