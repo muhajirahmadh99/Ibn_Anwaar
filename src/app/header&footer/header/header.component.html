@@ -161,38 +161,38 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" routerLink="/home" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Home</a>
+            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="Home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/about" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">About Us</a>
+            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="About Us">About Us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/contact" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Contact</a>
+            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="Contact">Contact</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/men" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Men</a>
+            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="Men">Men</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/women" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Women</a>
+            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="Women">Women</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/kids" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Kids</a>
+            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="kids">Kids</a>
         </li>
       </ul>
       <form class="form-inline logbtn">
-        <button class="btn" routerLink="/addcart" data-toggle="collapse" data-target="#navbarSupportedContent"><i
+        <div class="btn" type="submit" routerLink="/addcart" title="Your Cart"><i
             class="bi bi-cart"></i>
           <div class="badge mt-1">{{totalItem}}</div>
-        </button>
+        </div>
 
-        <button class="btn" type="submit" routerLink="/log" (click)="welcome(myname)">Login</button>
-        <button class="btn" type="submit" routerLink="/register">Register</button>
-        <button class="btn" type="submit" routerLink="/track">Track Ur Order</button>
+        <button class="btn" type="submit" routerLink="/log" (click)="welcome(myname)" title="Login">Login</button>
+        <button class="btn" type="submit" routerLink="/register" title="Register">Register</button>
+        <button class="btn" type="submit" routerLink="/track" title="Track Ur Order">Track Ur Order</button>
       </form>
     </div>
   </div>

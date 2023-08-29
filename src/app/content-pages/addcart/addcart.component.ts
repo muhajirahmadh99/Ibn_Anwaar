@@ -12,7 +12,7 @@ export class AddcartComponent implements OnInit {
   public product : any = [];
 
   public grandTotal ! : number;
-  constructor(public route: ActivatedRoute,private cartService : AddcartService,public service: AddcartService) { }
+  constructor(public route: ActivatedRoute,public cartService : AddcartService) { }
   // getmenuid : any;
   // menudata : any;
   ngOnInit(): void {
