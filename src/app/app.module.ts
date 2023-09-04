@@ -20,10 +20,9 @@ import { TrackComponent } from './content-pages/track/track.component';
 import { AddcartComponent } from './content-pages/addcart/addcart.component';
 import { ViewpageComponent } from './content-pages/viewpage/viewpage.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [
-    
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -43,7 +42,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ViewpageComponent,
   ],
   imports: [
-    MatProgressSpinnerModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
