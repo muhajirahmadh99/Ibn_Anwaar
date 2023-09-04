@@ -21,20 +21,7 @@ export class MainComponent implements OnInit {
       .from('.anim', { y: 160, stagger: 0.1, ease: "back" })
   }
 
-  // ngAfterViewInit(): void {
-  //   this.services.animateOnScroll();
 
-  // }
-
-  //
-
-
-
-  // addcart(data:any){
-  //   // console.log(data);
-
-  //   this.router.navigate(["/addcart", data])
-  // }
 
   addToCart(data: any) {
     this.cartservice.addtocart(data);

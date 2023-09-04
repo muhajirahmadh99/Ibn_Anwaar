@@ -1,94 +1,150 @@
-.card-body{
-    img{
-        width: 120px !important;
-        height: 173px;
-    }
-    .btn {
-        color: white;
-        background-color: #747d89;
-        border-radius: 15px;
-        border: none;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        text-align: center;
-        height: 45px;
-    }
+.br {
+    border-radius: 15px;
 
-    .btn:hover {
-        color: #f1efef;
-        background: rgb(61, 60, 60);
+    .head {
+        padding: 15px;
+        margin: auto;
+        width: fit-content;
+        background-color: #4185af;
+        text-align: center;
+        border-radius: 10px 10px 0px 0px;
+        color: #fff;
+        font-size: 2rem;
     }
 }
+
+.over {
+    border-color: #4185af;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #d1eaef;
+
+    .card-body {
+
+        img {
+            height: 180px;
+            width: 135px;
+            border-radius: 15px;
+            border: 2px solid #2d3f42
+        }
+
+        .quan {
+            display: flex;
+            align-items: end;
+            gap: 11px;
+            justify-content: center;
+        }
+    }
+
+    .place {
+        cursor: pointer;
+
+        .add {
+            color: white;
+            background-color: #44c776;
+            border-radius: 15px;
+            border: none;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            text-align: center;
+            height: 45px;
+        }
+
+        .add:hover {
+            color: #44c776;
+            background: white;
+            border: 1px solid #44c776;
+        }
+
+        .remove {
+            color: white;
+            background-color: #d11721;
+            border-radius: 15px;
+            border: none;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            text-align: center;
+            height: 45px;
+        }
+
+        .remove:hover {
+            color: #d11721;
+            background: white;
+            border: 1px solid #d11721;
+        }
+
+    }
+}
+
+
 @media (min-width: 1025px) {
     .h-custom {
-    height: 100vh !important;
+        height: 100vh !important;
     }
-    }
-    
-    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
     font-size: 1rem;
     line-height: 2.15;
     padding-left: .75em;
     padding-right: .75em;
-    }
-    
-    .card-registration .select-arrow {
+}
+
+.card-registration .select-arrow {
     top: 13px;
-    }
-    
-    .bg-grey {
-    background-color: #eae8e8;
-    }
-    
-    @media (min-width: 992px) {
+}
+
+
+@media (min-width: 992px) {
     .card-registration-2 .bg-grey {
-    border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
     }
-    }
-    
-    @media (max-width: 991px) {
+}
+
+@media (max-width: 991px) {
     .card-registration-2 .bg-grey {
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
     }
-    }
-.section-2{
+}
+
+.section-2 {
     .card {
         height: 60vh;
-        margin: 25px;
-        padding: 25px;
         background: #e2eaef;
         box-shadow: 3px 2px 39px -3px #888888;
         text-align: center;
         display: flex;
         justify-content: center;
     }
-    
+
     .head {
         border: none;
         font-size: 2rem;
         text-align: center;
     }
-    
+
     .emptycart {
         border-radius: 20px !important;
         width: 230px !important;
         margin-top: 50px;
     }
-    
+
     .productimg {
         border-radius: 30px !important;
         height: 184px;
         width: 150px;
     }
-    
+
     .con {
         width: 62%;
     }
-    
+
     .card-table {
         justify-content: center;
         display: flex;
@@ -96,22 +152,22 @@
         border-radius: 150px;
         text-align: center;
     }
-    
+
     .btn {
         border: none;
     }
-    
+
     .table td,
     .table th {
         padding: 1.75rem;
         vertical-align: baseline;
         border: none
     }
-    
+
     .fwrap {
         flex-wrap: wrap;
     }
-    
+
     .mob {
         justify-content: center;
         display: flex;

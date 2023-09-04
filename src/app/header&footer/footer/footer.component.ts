@@ -36,7 +36,7 @@ export class FooterComponent {
   // TODO: Cross browsing
   gotoTop() {
     window.scroll({ 
-      top: 20, 
+      top: 0, 
       left: 0, 
       behavior: 'smooth' 
     });

@@ -61,3 +61,21 @@ body{
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.btn {
+  color: white;
+  background-color: #747d89;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  height: 45px;
+  width: fit-content;
+}
+
+.btn:hover {
+  color: #f1efef;
+  background: rgb(61, 60, 60);
+}
