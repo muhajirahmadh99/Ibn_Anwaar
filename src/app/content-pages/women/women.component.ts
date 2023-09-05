@@ -23,5 +23,8 @@ export class WomenComponent implements OnInit {
   addToCart(data: any) {
     this.cartservice.addtocart(data);
   }
+
+
+
   
 }

@@ -4,47 +4,46 @@
     <div class="container-xl">
         <div class="row">
             <div class="col-md-12">
-                <h2>Thobe<b> for Kids</b></h2>
-                <div id="myCarousel" class="carousel slide" >
-                <div class="carousel-inner">
-                    <div class="item carousel-item active">
-                        <div class="row anim">
-                            <div class="col-xl-4 zoom" *ngFor = "let data of service.kidsdetails;">
-                                <div class="thumb-wrapper">
-                                    <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                    <div class="img-box mt-4">
-                                        <img src="{{data.carimg}}" class="img-fluid" alt="Apple iPad">									
-                                    </div>
-                                    <div class="thumb-content">
-                                        <div class="title">{{data.head}}</div>									
-                                        <div class="star-rating">
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                            </ul>
+                <h2>THOBE<b> for KIDS</b></h2>
+                <div id="myCarousel" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active">
+                            <div class="row anim" data-animatetime='0' data-animatefrom="fade-up">
+                                <div class="col-sm-4 zoom" *ngFor="let data of service.kidsdetails;">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box mt-4">
+                                            <img src="{{data.carimg}}" class="img-fluid" alt="Apple iPad">
                                         </div>
-                                        <p class="item-price"[innerHTML]="data.price"></p>
-                                        <div class="gap mt-3 mb-3">
-											<button class="btn btn-secondary btn-sm mb-2" (click)="addToCart(data)">Add to Cart</button>
-
-											<button class="btn btn-secondary btn-sm mb-2" routerLink="/cod">Buy Now</button>
-
-										</div> 
-                                     </div>						
+                                        <div class="thumb-content">
+                                            <div class="title">{{data.head}}</div>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price" [innerHtml]="data.price"></p>
+                                            <div class="gap mt-3 mb-3">
+                                                <button class="btn btn-secondary btn-sm mb-2" (click)="addToCart(data)">Add to Cart</button>
+    
+                                                <button class="btn btn-secondary btn-sm mb-2" routerLink="/cod">Buy Now</button>
+    
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
     
                 </div>
             </div>
         </div>
-        </div>
-        </div>
+    </div>
     </section>
     
 

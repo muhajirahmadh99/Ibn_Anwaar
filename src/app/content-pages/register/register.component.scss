@@ -53,12 +53,15 @@ body {
 	padding-left: 5px;
 }
 .signup-form .btn, .signup-form .btn:active {        
-	font-size: 16px;
-	font-weight: bold;
-	background: #19aa8d !important;
-	border-radius: 3px;
-	border: none;
-	min-width: 140px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #19aa8d !important;
+    border-radius: 3px;
+    border: none;
+    min-width: 240px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 .signup-form .btn:hover, .signup-form .btn:focus {
 	background: #179b81 !important;

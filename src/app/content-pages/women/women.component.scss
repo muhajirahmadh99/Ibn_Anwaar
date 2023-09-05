@@ -89,7 +89,6 @@ h2::after {
 	border: none;
 	font-size: 11px;
 	text-transform: uppercase;
-	padding: 13px;
 }
 
 .btn:hover {
@@ -149,3 +148,10 @@ h2::after {
 .btn {
 	margin-left: 2px;
 }
+.container{
+	margin-bottom: 8px;
+	width: 400px;
+	background-color: #a1a1a1;
+	height: 400px;
+	overflow-y: scroll;
+  }

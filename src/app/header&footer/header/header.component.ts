@@ -33,6 +33,4 @@ timeline
   welcome(name: any){
     alert(name)
   }
-
-  
 }

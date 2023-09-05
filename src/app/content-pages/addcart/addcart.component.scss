@@ -2,14 +2,15 @@
     border-radius: 15px;
 
     .head {
-        padding: 15px;
+        padding: 5px;
         margin: auto;
-        width: fit-content;
+        width: 65%;
         background-color: #4185af;
         text-align: center;
         border-radius: 10px 10px 0px 0px;
         color: #fff;
         font-size: 2rem;
+        line-height: 1.1;
     }
 }
 
@@ -33,6 +34,24 @@
             align-items: end;
             gap: 11px;
             justify-content: center;
+            border: none;
+            cursor: pointer;
+            line-height: 1.1;
+            .bt {
+                color: white;
+                background-color: #4185af;
+                border-radius: 7px;
+                height: 36px;
+                padding: 13px;
+                align-items: center;
+                display: flex;
+            }
+    
+            .bt:hover {
+                color: #4185af;
+                background: white;
+                border: 1px solid #4185af;
+            }
         }
     }
 
@@ -41,7 +60,7 @@
 
         .add {
             color: white;
-            background-color: #44c776;
+            background-color: #4185af;
             border-radius: 15px;
             border: none;
             padding: 10px;
@@ -50,12 +69,13 @@
             flex-wrap: wrap;
             text-align: center;
             height: 45px;
+            line-height: 1.1;
         }
 
         .add:hover {
-            color: #44c776;
+            color: #4185af;
             background: white;
-            border: 1px solid #44c776;
+            border: 1px solid #4185af;
         }
 
         .remove {

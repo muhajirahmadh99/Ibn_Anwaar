@@ -1,199 +1,86 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-  <div class="container-fluid">
-
-
-    <a routerLink="" 
-    data-target="#navbarSupportedContent"><img src="assets/logo.png" alt="Nature" class="responsive img"></a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      
-      <div class="navbar-nav">
-
-        <a class="nav-link" routerLink="/home" routerLinkActive="active-link" data-toggle="collapse"
-          data-target="#navbarSupportedContent">Home</a>
-
-
-
-        <a class="nav-link" routerLink="/about" routerLinkActive="active-link" data-toggle="collapse"
-          data-target="#navbarSupportedContent">About Us</a>
-
-
-
-        <a class="nav-link" routerLink="/contact" routerLinkActive="active-link" data-toggle="collapse"
-          data-target="#navbarSupportedContent">Contact</a>
-
-
-
-        <a class="nav-link" routerLink="/men" routerLinkActive="active-link" data-toggle="collapse"
-          data-target="#navbarSupportedContent">Men</a>
-
-
-
-        <a class="nav-link" routerLink="/women" routerLinkActive="active-link" data-toggle="collapse"
-          data-target="#navbarSupportedContent">Women</a>
-
-
-
-        <a class="nav-link" routerLink="/kids" routerLinkActive="active-link" data-toggle="collapse"
-          data-target="#navbarSupportedContent">Kids</a>
-
-      </div>
-      <div class="mt-1 logbtn">
-        <button class="btn" routerLink="/addcart" data-toggle="collapse" data-target="#navbarSupportedContent"><i class="bi bi-cart"></i><div  class="badge">{{totalItem}}</div></button>
-        
-        
-        <button class="btn" type="submit" routerLink="/log" data-toggle="collapse"
-          data-target="#navbarSupportedContent" (click)="welcome(myname)">Login</button>
-        <button class="btn" type="submit" routerLink="/register" data-toggle="collapse"
-          data-target="#navbarSupportedContent">Register</button>
-      </div>
-
-
-
-
-    </div>
-
-  </div>
-
-</nav> -->
-
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-lg">
-  <a routerLink="" 
-  data-target="#navbarSupportedContent"><img src="assets/logo.png" alt="Nature" class="responsive img"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-       
-        <a class="nav-link" routerLink="/home" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">Home</a>
-      </li>
-      <li class="nav-item">
-    
-        <a class="nav-link" routerLink="/about" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">About Us</a>
-      </li>
-
-      <li class="nav-item">
-    
-        <a class="nav-link" routerLink="/contact" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">Contact</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/men" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">Men</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/women" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">Women</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/kids" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">Kids</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0 logbtn">
-      
-      <button class="btn" routerLink="/addcart"><i class="bi bi-cart"></i><div  class="badge">{{totalItem}}</div></button>
-
-       <button class="btn" type="submit" routerLink="/log" (click)="welcome(myname)">Login</button>
-
-        <button class="btn" type="submit" routerLink="/register">Register</button>
-        <button class="btn" type="submit" routerLink="/track">Track Ur Order</button>
-    </form>
-  </div>
-</nav> -->
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-lg">
-  <div class="container-fluid">
-    <a routerLink="" 
-    data-target="#navbarSupportedContent"><img src="assets/logo.png" alt="Nature" class="responsive img"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-       
-          <a class="nav-link" routerLink="/home" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">Home</a>
-        </li>
-        <li class="nav-item">
-      
-          <a class="nav-link" routerLink="/about" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">About Us</a>
-        </li>
-  
-        <li class="nav-item">
-      
-          <a class="nav-link" routerLink="/contact" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/men" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">Men</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/women" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">Women</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/kids" routerLinkActive="active-link" data-toggle="collapse" data-target="#navbarSupportedContent">Kids</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0 logbtn">
-        <button class="btn" routerLink="/addcart"><i class="bi bi-cart"></i><div class="badge">{{totalItem}}</div></button>
-
-        <button class="btn" type="submit" routerLink="/log" (click)="welcome(myname)">Login</button>
- 
-         <button class="btn" type="submit" routerLink="/register">Register</button>
-         <button class="btn" type="submit" routerLink="/track">Track Ur Order</button>
-      </form>
-    </div>
-  </div>
-</nav> -->
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
   <div class="container-fluid">
-    <a routerLink="" data-target="#navbarSupportedContent"><img src="assets/logo.png" alt="Nature"
-        class="responsive img"></a>
+    <a routerLink=""><img src="assets/logo.png" alt="Nature" class="responsive img"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="desktop collapse navbar-collapse">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="Home">Home</a>
+          <a class="nav-link" routerLink="/home" routerLinkActive="active-link" title="Home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="About Us">About Us</a>
+          <a class="nav-link" routerLink="/about" routerLinkActive="active-link" title="About Us">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contact" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="Contact">Contact</a>
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active-link" title="Contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/men" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="Men">Men</a>
+          <a class="nav-link" routerLink="/men" routerLinkActive="active-link" title="Men">Men</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/women" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="Women">Women</a>
+          <a class="nav-link" routerLink="/women" routerLinkActive="active-link" title="Women">Women</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/kids" aria-current="page" routerLinkActive="active-link"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" title="kids">Kids</a>
+          <a class="nav-link" routerLink="/kids" routerLinkActive="active-link" title="kids">Kids</a>
         </li>
       </ul>
-      <form class="form-inline logbtn">
-        <div class="btn" type="submit" routerLink="/addcart" title="Your Cart" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"><i class="bi bi-cart"></i>
+    </div>
+    <div class="desktop">
+      <form class="form-inline logbtn d-flex  ">
+        <div class="btn" type="submit" routerLink="/addcart" title="Your Cart"><i class="bi bi-cart"></i>
           <div class="badge mt-1">{{totalItem}}</div>
         </div>
 
-        <button class="btn" type="submit" routerLink="/log" (click)="welcome(myname)" title="Login">Login</button>
-        <button class="btn" type="submit" routerLink="/register" title="Register">Register</button>
-        <button class="btn" type="submit" routerLink="/track" title="Track Ur Order">Track Ur Order</button>
+        <div class="btn" type="submit" routerLink="/log" (click)="welcome(myname)" title="Login">Login</div>
+        <div class="btn" type="submit" routerLink="/register" title="Register">Register</div>
+        <div class="btn" type="submit" routerLink="/track" title="Track Ur Order">Track Ur Order</div>
       </form>
     </div>
+    <div class="mobile collapse navbar-collapse">
+      <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active-link" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" title="Home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about" routerLinkActive="active-link" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" title="About Us">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact" routerLinkActive="active-link" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" title="Contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/men" routerLinkActive="active-link" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" title="Men">Men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/women" routerLinkActive="active-link" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" title="Women">Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/kids" routerLinkActive="active-link" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" title="kids">Kids</a>
+          </li>
+        </ul>
+        <form class="form-inline logbtn">
+          <div class="btn" type="submit" routerLink="/addcart" title="Your Cart" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"><i class="bi bi-cart"></i>
+            <div class="badge mt-1">{{totalItem}}</div>
+          </div>
+
+          <div class="btn" type="submit" routerLink="/log" (click)="welcome(myname)" title="Login"
+            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Login</div>
+          <div class="btn" type="submit" routerLink="/register" title="Register" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent">Register</div>
+          <div class="btn" type="submit" routerLink="/track" title="Track Ur Order" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent">Track Ur Order</div>
+        </form>
+      </div>
+    </div>
+
   </div>
 </nav>

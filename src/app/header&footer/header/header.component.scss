@@ -60,3 +60,46 @@ nav {
         background: rgb(61, 60, 60);
     }
 }
+
+.mobile{
+    display: none !important;
+}
+.desktop{
+    display: block !important;
+}
+
+@media (max-width: 576px) {
+
+    .desktop{
+        display: none !important;
+    }
+    .mobile{
+        display: block !important;
+    }
+}
+@media (max-width: 768px) {
+    .desktop{
+        display: none !important;
+    }
+    .mobile{
+        display: block !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .desktop{
+        display: none !important;
+    }
+    .mobile{
+        display: block !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .desktop{
+        display: none !important;
+    }
+    .mobile{
+        display: block !important;
+    }
+}
