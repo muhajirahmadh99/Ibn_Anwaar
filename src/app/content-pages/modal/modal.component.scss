@@ -1,0 +1,35 @@
+.modal-content {
+    position: relative;
+    /* display: flex; */
+    flex-direction: column;
+    width: 90%;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+    height: 390px;
+    margin: auto;
+    .btn {
+        color: white;
+        background-color: #d11721;
+        border-radius: 10px;
+        border: none;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        height: 45px;
+        width: 74px;
+        line-height: 1;
+    }
+
+    .btn:hover {
+        color: #d11721;
+        background: white;
+        border: 1px solid #d11721;
+    }
+}

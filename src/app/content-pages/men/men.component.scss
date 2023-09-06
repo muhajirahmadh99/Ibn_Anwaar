@@ -37,12 +37,12 @@ h2::after {
 
 .carousel .thumb-wrapper {
 	padding: 15px 0px;
-    height: 95%;
-    margin-top: 10px;
-    background: #fff;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;
+	height: 95%;
+	margin-top: 10px;
+	background: #fff;
+	border-radius: 20px;
+	text-align: center;
+	position: relative;
 	cursor: pointer;
 }
 
@@ -54,8 +54,8 @@ h2::after {
 }
 
 .carousel .item img {
-    height: 180px;
-    width: 150x;
+	height: 180px;
+	width: 150x;
 	display: inline-block;
 	position: absolute;
 	bottom: 0;
@@ -147,4 +147,42 @@ h2::after {
 
 .btn {
 	margin-left: 2px;
+}
+
+.row {
+	position: relative;
+
+	.cardbox {
+		display: flex;
+		background-color: #fff;
+		justify-content: center;
+		top: 619px;
+		left: 19px;
+		position: absolute;
+		width: 300px;
+		height: 250px;
+		align-items: center;
+		text-align: center;
+		color: black;
+		border-radius: 30px;
+		img{
+			height: 165px;
+			width: 200px;
+		}
+		.bt {
+			color: black;
+			font-size: 33px;
+			text-align: center;
+			cursor: pointer;
+			position: relative;
+			top: -94px;
+			right: -17px;
+		}
+
+		// i:hover {
+		// 	color: #4185af;
+		// 	background: white;
+		// 	border: 1px solid #4185af;
+		// }
+	}
 }

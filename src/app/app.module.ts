@@ -1,7 +1,5 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { ScrollTopElementDemo } from '@angscroll-top-element-demo';
-// import { ScrollTopModule } from 'primeng/scrolltop';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header&footer/header/header.component';
@@ -21,11 +19,10 @@ import { TrackComponent } from './content-pages/track/track.component';
 import { AddcartComponent } from './content-pages/addcart/addcart.component';
 import { ViewpageComponent } from './content-pages/viewpage/viewpage.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ModalComponent } from './content-pages/modal/modal.component';
 
 @NgModule({
   declarations: [
-    // ScrollTopModule,
-    // ScrollTopElementDemo,
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -43,6 +40,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     TrackComponent,
     AddcartComponent,
     ViewpageComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

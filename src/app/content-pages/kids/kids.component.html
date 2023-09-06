@@ -28,7 +28,8 @@
                                             </div>
                                             <p class="item-price" [innerHtml]="data.price"></p>
                                             <div class="gap mt-3 mb-3">
-                                                <button class="btn btn-secondary btn-sm mb-2" (click)="addToCart(data)">Add to Cart</button>
+                                                <button class="btn btn-secondary btn-sm mb-2" (click)="addToCart(data)" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">Add to Cart</button>
     
                                                 <button class="btn btn-secondary btn-sm mb-2" routerLink="/cod">Buy Now</button>
     
@@ -46,6 +47,6 @@
     </div>
     </section>
     
-
+<app-modal></app-modal>
     
       
