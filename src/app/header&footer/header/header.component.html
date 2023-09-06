@@ -1,41 +1,41 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
   <div class="container-fluid">
-    <a routerLink=""><img src="assets/logo.png" alt="Nature" class="responsive img"></a>
+    <a routerLink="/home"><img src="assets/logo.png" alt="Nature" class="responsive img"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="desktop collapse navbar-collapse">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active-link" title="Home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active-link" title="About Us">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contact" routerLinkActive="active-link" title="Contact">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/men" routerLinkActive="active-link" title="Men">Men</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/women" routerLinkActive="active-link" title="Women">Women</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/kids" routerLinkActive="active-link" title="kids">Kids</a>
-        </li>
-      </ul>
+      <div class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="nav-item">
+          <div class="nav-link" routerLink="/home" routerLinkActive="active-link" data-title="Home">Home</div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-link" routerLink="/about" routerLinkActive="active-link" data-title="About Us">About Us</div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active-link" data-title="Contact">Contact</a>
+        </div>
+        <div class="nav-item">
+          <div class="nav-link" routerLink="/men" routerLinkActive="active-link" data-title="Men">Men</div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" routerLink="/women" routerLinkActive="active-link" data-title="Women">Women</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" routerLink="/kids" routerLinkActive="active-link" data-title="kids">Kids</a>
+        </div>
+      </div>
     </div>
     <div class="desktop">
       <form class="form-inline logbtn d-flex  ">
-        <div class="btn" type="submit" routerLink="/addcart" title="Your Cart"><i class="bi bi-cart"></i>
+        <div class="btn" type="submit" routerLink="/addcart" data-title="Your Cart"><i class="bi bi-cart"></i>
           <div class="badge mt-1">{{totalItem}}</div>
         </div>
 
-        <div class="btn" type="submit" routerLink="/log" (click)="welcome(myname)" title="Login">Login</div>
-        <div class="btn" type="submit" routerLink="/register" title="Register">Register</div>
-        <div class="btn" type="submit" routerLink="/track" title="Track Ur Order">Track Ur Order</div>
+        <div class="btn" type="submit" routerLink="/log" (click)="welcome(myname)" data-title="Login">Login</div>
+        <div class="btn" type="submit" routerLink="/register" data-title="Register">Register</div>
+        <div class="btn" type="submit" routerLink="/track" data-title="Track Ur Order">Track Ur Order</div>
       </form>
     </div>
     <div class="mobile collapse navbar-collapse">
