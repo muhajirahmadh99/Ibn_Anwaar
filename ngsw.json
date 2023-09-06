@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1693923698368,
+  "timestamp": 1693996177926,
   "index": "https://muhajirahmadh99.github.io/Ibn_Anwaar/index.html",
   "assetGroups": [
     {
@@ -13,12 +13,12 @@
       "urls": [
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/favicon.ico",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/index.html",
-        "https://muhajirahmadh99.github.io/Ibn_Anwaar/main.9baa1fca25e06fd2.js",
+        "https://muhajirahmadh99.github.io/Ibn_Anwaar/main.a05fb4ca9ac27f25.js",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/manifest.webmanifest",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/polyfills.50de3ae21dd92b19.js",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/runtime.fb7cab9f2605ac5d.js",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/scripts.4b481c0996a087c9.js",
-        "https://muhajirahmadh99.github.io/Ibn_Anwaar/styles.94f4eeffa079fffc.css"
+        "https://muhajirahmadh99.github.io/Ibn_Anwaar/styles.5eaf22bc28625bc7.css"
       ],
       "patterns": []
     },
@@ -31,6 +31,7 @@
       },
       "urls": [
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/addcart.png",
+        "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/check-mark-verified.gif",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/desert.png",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/giphy.gif",
         "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/gpay.jpeg",
@@ -89,6 +90,7 @@
   "dataGroups": [],
   "hashTable": {
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/addcart.png": "d37ef979389f301a58e4efb94db20dabf9bf3162",
+    "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/check-mark-verified.gif": "09b0c921f907ae53505ece588a10e5d1fd73669d",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/desert.png": "d124a1e744754e826e13223a3e33e877f68692fa",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/giphy.gif": "90dd6e5d86a58ab20f62fe2720da06a61e69a4ef",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/gpay.jpeg": "9a5eff85ff899dcb3ac6448c9e5e3d5018172f06",
@@ -141,13 +143,13 @@
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/assets/women/women9.png": "2ed4a1c8c4f11c122297bc3a4c0c544243c71e69",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/desert.7fd7dca4d70c3278.png": "d124a1e744754e826e13223a3e33e877f68692fa",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/favicon.ico": "653c7e77672eb91d1e47a0b5fea5a26ae098805d",
-    "https://muhajirahmadh99.github.io/Ibn_Anwaar/index.html": "56c4cf6f98e9eab23f6de32b66cc180d17caa4f5",
-    "https://muhajirahmadh99.github.io/Ibn_Anwaar/main.9baa1fca25e06fd2.js": "9577eed59ec67b56780811357130d780c3848c77",
+    "https://muhajirahmadh99.github.io/Ibn_Anwaar/index.html": "9069126417797ffdad18e6a74536fc4fa7eacfc4",
+    "https://muhajirahmadh99.github.io/Ibn_Anwaar/main.a05fb4ca9ac27f25.js": "4cb8bc82d444183342a579f3a56c54276742c00c",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/manifest.webmanifest": "0920260c45255be3a82380a0a89e770a7cb4f78a",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/polyfills.50de3ae21dd92b19.js": "7954692bd23ee34d8bb7f925e1238529f48e803d",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/runtime.fb7cab9f2605ac5d.js": "7bd477420fc7441ca692cc6bb7f095934ab71029",
     "https://muhajirahmadh99.github.io/Ibn_Anwaar/scripts.4b481c0996a087c9.js": "76fa23108a6758c9cd2f1064237e5a32922eb457",
-    "https://muhajirahmadh99.github.io/Ibn_Anwaar/styles.94f4eeffa079fffc.css": "c72cf390d0057d803c4037b0dff632694e39f3fb"
+    "https://muhajirahmadh99.github.io/Ibn_Anwaar/styles.5eaf22bc28625bc7.css": "890906a8b59f0d851901ff1bc619ce86e7a55617"
   },
   "navigationUrls": [
     {
