@@ -196,8 +196,7 @@ form .row .col-2 {
 .btn:hover,b:hover {
     background-color: rgb(190, 196, 193)
 }    
-#close {
-    width: 480px;
+.close {
     height: 70px;
     display: flex;
     align-items: center;
@@ -206,17 +205,19 @@ form .row .col-2 {
     padding-left: 10px;
     background-image: linear-gradient(to right, #406fa8 0%, #79CBCA 51%, #91a0b1 100%);
     border: none;
+    border-radius: 15px;
     transition: 0.5s;
-    background-size: 200% auto
+    background-size: 200% auto;
+    cursor: pointer;
 }
 
-#close:hover {
+.close:hover {
     background-position: right center;
     color: rgb(170, 114, 114);
     text-decoration: none
 }
 
-#close:hover .fas.fa-arrow-right {
+.close:hover .fas.fa-arrow-right {
     transform: translate(15px);
     transition: transform 0.2s ease-in
 }

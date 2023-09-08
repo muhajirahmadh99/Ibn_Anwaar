@@ -14,7 +14,7 @@ export class FooterComponent {
 
 
   isShow: any = false;
-  topPosToStartShowing = 100;
+  topPosToStartShowing = 300;
 
   @HostListener('window:scroll')
   checkScroll() {
