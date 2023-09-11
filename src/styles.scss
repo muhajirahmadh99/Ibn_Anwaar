@@ -80,8 +80,19 @@ body {
 
 // Mobile View //
 
-@media (max-width: 579px) {
-	.carousel{
-		display: contents;
-	}
+@media (max-width: 280px) {
+  .carousel {
+    display: contents;
+  }
+}
+
+@media (max-width : 320px) {
+  .carousel {
+    display: contents;
+  }
+}
+@media (max-width : 768px) {
+  .carousel {
+    display: contents;
+  }
 }
