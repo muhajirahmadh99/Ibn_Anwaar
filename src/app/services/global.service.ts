@@ -69,7 +69,7 @@ export class GlobalService {
     {
       id: 10,
       head: "LIGHT GREY THOBE",
-      carimg: "/assets/kids/kid4.png",
+      carimg: "assets/kids/kid4.png",
       price: `<del>$25.00</del> <b>$23.99</b>`
     },
     {
@@ -175,7 +175,7 @@ export class GlobalService {
     {
       id: 2,
       head: "INDIA BURKA",
-      carimg: "/assets/women/women5.png",
+      carimg: "assets/women/women5.png",
       price: `<del>$25.00</del> <b>$23.99</b>`
     },
     {
