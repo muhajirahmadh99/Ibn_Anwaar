@@ -44,7 +44,7 @@ export class GlobalService {
     },
     {
       id: 6,
-      head: "LITE BROWN THOBE",
+      head: "LIGHT BROWN THOBE",
       carimg: "assets/women/women4.png",
       price: `<del>$25.00</del> <b>$23.99</b>`
     },
@@ -68,8 +68,8 @@ export class GlobalService {
     },
     {
       id: 10,
-      head: "MAROON THOBE",
-      carimg: "/assets/kids/kid5.png",
+      head: "LIGHT GREY THOBE",
+      carimg: "/assets/kids/kid4.png",
       price: `<del>$25.00</del> <b>$23.99</b>`
     },
     {
@@ -175,7 +175,7 @@ export class GlobalService {
     {
       id: 2,
       head: "INDIA BURKA",
-      carimg: "/assets/women/women9.png",
+      carimg: "/assets/women/women5.png",
       price: `<del>$25.00</del> <b>$23.99</b>`
     },
     {
@@ -192,7 +192,7 @@ export class GlobalService {
     },
     {
       id: 5,
-      head: "LITE BROWN SCARF",
+      head: "LIGHT BROWN SCARF",
       carimg: "assets/women/women4.png",
       price: `<del>$40.00</del> <b>$39.00</b>`
     },
@@ -210,7 +210,7 @@ export class GlobalService {
     },
     {
       id: 8,
-      head: "LITE GREY",
+      head: "LIGHT GREY",
       carimg: "assets/women/women7.png",
       price: `<del>$31.00</del> <b>$25.00</b>`
     },
@@ -222,7 +222,7 @@ export class GlobalService {
     },
     {
       id: 10,
-      head: "LITE GREY SCARF",
+      head: "LIGHT GREY SCARF",
       carimg: "assets/women/women7.png",
       price: `<del>$25.00</del> <b>$23.99</b>`
     },
@@ -234,7 +234,7 @@ export class GlobalService {
     },
     {
       id: 12,
-      head: "LITE BROWN SCARF",
+      head: "LIGHT BROWN SCARF",
       carimg: "assets/women/women4.png",
       price: `<del>$31.00</del> <b>$25.00</b>`
     },

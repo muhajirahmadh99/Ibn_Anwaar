@@ -44,11 +44,11 @@ export class FooterComponent {
 
   // Animation
   ngOnInit(): void {
-    const timeline = new TimelineMax({ repeat: -1 });
-    timeline
+    // const timeline = new TimelineMax({ repeat: -1 });
+    // timeline
 
-      .to(".arrow", .9, { transformOrigin: "50% 100%", scaleY: 1.1, yoyo: true, repeat: 1 })
-      .to(".arrow", .20, { x: -400, ease: Circ.easeOut, yoyo: true, repeat: 1 })
+    //   .to(".arrow", .9, { transformOrigin: "50% 100%", scaleY: 1.1, yoyo: true, repeat: 1 })
+    //   .to(".arrow", .20, { x: -400, ease: Circ.easeOut, yoyo: true, repeat: 1 })
   }
 
 

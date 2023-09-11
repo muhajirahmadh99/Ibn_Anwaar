@@ -1,12 +1,29 @@
 // scroll to top
-.arrow{
+.arrow {
 	display: flex;
 	justify-content: flex-end;
 	cursor: pointer;
 	position: fixed;
 	right: 10px;
 	bottom: 10px;
-	.bi{
+	transform: translatey(0px);
+	animation: float 2s cubic-bezier(0.39, -0.08, 0.58, 1) infinite;
+
+	@keyframes float {
+		0% {
+			transform: translatey(0px);
+		}
+
+		50% {
+			transform: translatey(-20px);
+		}
+
+		100% {
+			transform: translatey(0px);
+		}
+	}
+
+	.bi {
 		font-size: 34px;
 		color: #4185af;
 	}
