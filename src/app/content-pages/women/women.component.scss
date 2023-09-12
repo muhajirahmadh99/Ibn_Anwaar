@@ -1,68 +1,67 @@
-
 h2 {
-	color: #000;
-	// font-size: 26px;
-	font-weight: 300;
-	text-align: center;
-	text-transform: uppercase;
-	position: relative;
-	margin: 30px 0 60px;
+    color: #000;
+    // font-size: 26px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin: 30px 0 60px;
 }
 
 h2::after {
-	content: "";
-	width: 100px;
-	position: absolute;
-	margin: 0 auto;
-	height: 4px;
-	border-radius: 1px;
-	background: #4185af;
-	left: 0;
-	right: 0;
-	bottom: -20px;
+    content: "";
+    width: 100px;
+    position: absolute;
+    margin: 0 auto;
+    height: 4px;
+    border-radius: 1px;
+    background: #4185af;
+    left: 0;
+    right: 0;
+    bottom: -20px;
 }
 
 .carousel {
-	margin: 50px auto;
-	padding: 0 65px;
+    margin: 50px auto;
+    padding: 0 65px;
 
 }
 
 .carousel .item {
-	color: #747d89;
-	text-align: center;
-	overflow: hidden;
+    color: #747d89;
+    text-align: center;
+    overflow: hidden;
 
 }
 
 .carousel .thumb-wrapper {
-	padding: 15px 0px;
+    padding: 15px 0px;
     height: 95%;
     margin-top: 10px;
     background: #fff;
     border-radius: 20px;
     text-align: center;
     position: relative;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .carousel .item .img-box {
-	height: 190px;
-	margin-bottom: 20px;
-	width: 100%;
-	position: relative;
+    height: 190px;
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
 }
 
 .carousel .item img {
-    height: 180px;
-    width: 150x;
-	display: inline-block;
-	position: absolute;
-	bottom: 0;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
-	border-radius: 20px;
+    max-width: 90%;
+    max-height: 100%;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border-radius: 20px;
 }
 
 // .carousel .item h4 {
@@ -71,87 +70,45 @@ h2::after {
 .carousel .item h4,
 .carousel .item p,
 .carousel .item ul {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .carousel .thumb-content {
-	font-weight: bold;
-
-
-	padding: 6px 14px;
+    font-weight: bold;
+    padding: 6px 14px;
 
 }
 
-.btn {
-	color: white;
-	background-color: #747d89;
-	border-radius: 20px;
-	border: none;
-	font-size: 11px;
-	text-transform: uppercase;
-}
-
-.btn:hover {
-	color: #f1efef;
-	background: rgb(61, 60, 60);
-}
-
-.btn:focus {
-	box-shadow: none;
-}
-
-.btn i {
-	font-size: 14px;
-	font-weight: bold;
-	margin-left: 5px;
-}
-
-// .carousel .thumb-content  .carousel .thumb-content 
-.carousel .thumb-content .btn i {
-	font-weight: bold;
-	margin-left: 5px;
-}
 
 .carousel .item-price {
-	font-size: 13px;
-	padding: 2px 0;
+    font-size: 13px;
+    padding: 2px 0;
 }
 
 .carousel .item-price strike {
-	opacity: 0.7;
-	margin-right: 5px;
+    opacity: 0.7;
+    margin-right: 5px;
 }
 
 .carousel .wish-icon {
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	z-index: 99;
-	cursor: pointer;
-	font-size: 16px;
-	color: #abb0b8;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 99;
+    cursor: pointer;
+    font-size: 16px;
+    color: #abb0b8;
 }
 
 .carousel .wish-icon .fa-heart {
-	color: #ff6161;
+    color: #ff6161;
 }
 
 .star-rating li {
-	padding: 0;
+    padding: 0;
 }
 
 .star-rating i {
-	font-size: 14px;
-	color: #ffc000;
+    font-size: 14px;
+    color: #ffc000;
 }
-
-.btn {
-	margin-left: 2px;
-}
-.container{
-	margin-bottom: 8px;
-	width: 400px;
-	background-color: #a1a1a1;
-	height: 400px;
-	overflow-y: scroll;
-  }

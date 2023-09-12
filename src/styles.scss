@@ -35,7 +35,7 @@ body {
 }
 
 .title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -63,7 +63,7 @@ body {
   background-color: #747d89;
   border-radius: 15px;
   border: none;
-  padding: 10px;
+  padding: 8px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -80,22 +80,23 @@ body {
 
 // Mobile View //
 
-@media (max-width: 280px) {
-  .carousel {
-    display: contents;
-  }
-}
-
-// @media (max-width : 320px) {
+// @media (max-width: 280px) {
 //   .carousel {
-//     display: flex;
-//     width: 33%;
+//     display: contents;
 //   }
 // }
 
-@media (max-width : 768px) {
+// // @media (max-width : 320px) {
+// //   .carousel {
+// //     display: flex;
+// //     width: 33%;
+// //   }
+// // }
+
+@media (max-width : 712px) {
   .carousel {
-    display: contents;
+    display: flex;
+    width: 35%;
   }
 }
 @media (max-width : 820px) {
