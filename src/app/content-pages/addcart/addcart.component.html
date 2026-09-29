@@ -1,111 +1,79 @@
-<div class="container p-4 br">
-  <ng-container *ngIf="product.length != 0">
-    <div class="head">List Of My Carts</div>
-    <div class="row d-flex justify-content-center">
-      
-      <div class="col-md-8">
-        <div class="card over mb-4 shadow-lg">
-          <div class="card-body" *ngFor="let item of product;let i = index">
-            <!-- Single item -->
-            <div class="row">
-              <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 d-flex justify-content-center">
-                <!-- Image -->
-                <div class="bg-image hover-overlay hover-zoom ripple rounded">
-                  <img src="{{item.carimg}}">
-                  <a href="#!">
-                    <div class="mask"></div>
-                  </a>
-                </div>
-                <!-- Image -->
-              </div>
+<div class="page">
+  <div class="container">
+    <ng-container *ngIf="items.length; else empty">
+      <div class="section-head">
+        <div>
+          <h1>Your cart</h1>
+          <p>{{ count }} {{ count === 1 ? 'item' : 'items' }}</p>
+        </div>
+        <button type="button" class="btn btn-link text-muted" (click)="emptycard()">
+          <i class="bi bi-trash me-1"></i> Clear cart
+        </button>
+      </div>
 
-              <div class="col-lg-5 col-md-6">
-                <!-- Data -->
+      <div class="layout">
+        <div class="lines surface">
+          <div class="line" *ngFor="let item of items">
+            <a [routerLink]="['/view', item.product.id]" class="thumb">
+              <img [src]="item.product.image" [alt]="item.product.name" />
+            </a>
 
-                <div class="d-flex justify-content-center text-center">
-                  <div class="">
-                    <p><strong>{{item.head}}</strong></p>
-                    <p>Color: blue</p>
-                    <p>Size: M</p>
-                    <div class=""></div>
-                  </div>
-
-                </div>
-
-                <!-- <div class="d-flex justify-content-center">
-                  <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                    (click)="removeitem(item)" title="Remove item">
-                    <i class="fas fa-trash"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                    title="Move to the wish list">
-                    <i class="fas fa-heart"></i>
-                  </button>
-                </div> -->
-
-                <!-- Data -->
-              </div>
-
-              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <!-- Quantity -->
-                <div class="quan">
-                  <div class="bt" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                    <i class="bi bi-dash-lg"></i>
-                  </div>
-
-                  <div class="form-outline">
-                    <label class="form-label" for="form1"><b>Quantity</b></label>
-                    <input id="form1" min="0" name="quantity" value="1" type="number"
-                      class="form-control text-center" />
-                  </div>
-
-                  <div class="bt" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                    <i class="bi bi-plus-lg"></i>
-                  </div>
-
-
-                </div>
-                <!-- Quantity -->
-                <!-- Price -->
-                <div class="text-center mt-2">
-                  <p [innerHTML]="item.price"></p>
-                </div>
-                <div class="d-flex gap-3 justify-content-center place">
-                  <div class="add">Place Your Order</div>
-                  <div class="remove" (click)="removeitem(item)">Remove</div>
-                </div>
-                <!-- Price -->
+            <div class="meta">
+              <span class="eyebrow">{{ item.product.category }}</span>
+              <a [routerLink]="['/view', item.product.id]" class="name">{{ item.product.name }}</a>
+              <div class="price small-p">
+                {{ item.product.price | currency: 'USD' }}
+                <del *ngIf="item.product.oldPrice > item.product.price">{{ item.product.oldPrice | currency: 'USD' }}</del>
               </div>
             </div>
-            <hr class="my-2">
 
+            <div class="qty">
+              <button type="button" (click)="setQty(item, item.qty - 1)" aria-label="Decrease">
+                <i class="bi" [ngClass]="item.qty === 1 ? 'bi-trash' : 'bi-dash'"></i>
+              </button>
+              <span>{{ item.qty }}</span>
+              <button type="button" (click)="setQty(item, item.qty + 1)" aria-label="Increase"><i class="bi bi-plus"></i></button>
+            </div>
+
+            <div class="line-total">{{ item.product.price * item.qty | currency: 'USD' }}</div>
+
+            <button type="button" class="remove" (click)="removeitem(item)" aria-label="Remove item">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <aside class="summary surface">
+          <h2>Order summary</h2>
+
+          <div class="ship-note" *ngIf="shipping > 0">
+            Add <strong>{{ freeShippingAt - subtotal | currency: 'USD' }}</strong> more for free delivery
+            <div class="bar"><span [style.width.%]="(subtotal / freeShippingAt) * 100"></span></div>
+          </div>
+          <div class="ship-note ok" *ngIf="shipping === 0">
+            <i class="bi bi-check-circle-fill me-1"></i> You've unlocked free delivery
           </div>
 
-        </div>
-        <div class="btn m-auto" routerLink="/home">Add More</div>
+          <dl>
+            <div><dt>Subtotal</dt><dd>{{ subtotal | currency: 'USD' }}</dd></div>
+            <div class="save" *ngIf="savings > 0"><dt>You save</dt><dd>−{{ savings | currency: 'USD' }}</dd></div>
+            <div><dt>Delivery</dt><dd>{{ shipping ? (shipping | currency: 'USD') : 'Free' }}</dd></div>
+            <div class="total"><dt>Total</dt><dd>{{ total | currency: 'USD' }}</dd></div>
+          </dl>
+
+          <a routerLink="/cod" class="btn btn-primary btn-lg w-100">Checkout</a>
+          <a routerLink="/home" class="btn btn-link w-100 text-muted">Continue shopping</a>
+        </aside>
       </div>
-    </div>
-  </ng-container>
-</div>
+    </ng-container>
 
-
-
-
-<div class="section-2 pt-2 pb-5">
-  <ng-container *ngIf="product.length == 0">
-    <div class="container">
-
-      <div class="card mt-3">
-        <div class="head"><b>My Cart</b> </div>
-        <div class="">
-          <img src="assets/addcart.png" class="emptycart flex wrap">
-          <h3 class="mt-2">Your Cart is Empty</h3>
-          <h4>Add into item Now!</h4>
-          <div class="btn m-auto" routerLink="/home">Shop Now</div>
-        </div>
+    <ng-template #empty>
+      <div class="empty surface">
+        <img src="assets/addcart.png" alt="" />
+        <h1>Your cart is empty</h1>
+        <p class="text-muted">Looks like you haven't added anything yet.</p>
+        <a routerLink="/home" class="btn btn-primary btn-lg">Start shopping</a>
       </div>
-
-
-    </div>
-  </ng-container>
+    </ng-template>
+  </div>
 </div>

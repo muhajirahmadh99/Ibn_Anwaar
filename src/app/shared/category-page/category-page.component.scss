@@ -1,0 +1,42 @@
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+
+  a {
+    color: var(--muted);
+  }
+
+  i {
+    font-size: 10px;
+  }
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.count {
+  font-size: 14px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.sort {
+  margin: 0;
+
+  .form-select {
+    height: 42px;
+    border-radius: 999px;
+    border-color: var(--line);
+    padding-left: 16px;
+    padding-right: 36px;
+    font-size: 14px;
+    background-color: var(--surface);
+  }
+}

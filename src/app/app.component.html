@@ -1,9 +1,18 @@
-<div class="border-blue">
-    <div class="mb">
-        <app-header>
-        </app-header>
+<app-header></app-header>
+
+<main class="main">
+  <router-outlet></router-outlet>
+</main>
+
+<app-footer></app-footer>
+
+<div class="toast-wrap" aria-live="polite">
+  <div class="toast-card" *ngIf="toast">
+    <img [src]="toast.image" [alt]="toast.name" />
+    <div>
+      <strong>Added to cart</strong>
+      <span>{{ toast.name }}</span>
     </div>
-    <router-outlet></router-outlet>
-    <app-footer>
-    </app-footer>
+    <a routerLink="/addcart" class="btn btn-primary btn-sm">View cart</a>
+  </div>
 </div>

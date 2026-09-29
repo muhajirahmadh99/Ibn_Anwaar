@@ -1,59 +1,80 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { Router } from '@angular/router';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { Product } from './global.service';
+
+export interface CartItem {
+  product: Product;
+  qty: number;
+}
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AddcartService {
+  readonly freeShippingAt = 50;
+  readonly shippingFee = 4.99;
 
-  public cartItemList: any = []
-  public productList = new BehaviorSubject<any>([]);
-  // mobileWidth = 770;
-  // isMobile = true;
-  constructor(private router: Router) {
+  private items: CartItem[] = [];
+  private readonly items$ = new BehaviorSubject<CartItem[]>([]);
 
-  
-    // if (document.body.clientWidth <= this.mobileWidth) {
-    // this.isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/)) ? true : false;
-    // console.log(this.isMobile)
-    // }
+  /** Emits the product each time something is added, for the "added to cart" toast. */
+  readonly added$ = new Subject<Product>();
+
+  getItems() {
+    return this.items$.asObservable();
   }
 
-  getProducts() {
-    return this.productList.asObservable();
+  addtocart(product: Product, qty = 1) {
+    const existing = this.items.find((i) => i.product.id === product.id);
+    if (existing) {
+      existing.qty += qty;
+    } else {
+      this.items.push({ product, qty });
+    }
+    this.emit();
+    this.added$.next(product);
   }
 
-  setProducts(product: any) {
-    this.cartItemList.push(...product);
-    this.productList.next(product);
-  }
-  addtocart(product: any) {
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
-    console.log(this.cartItemList);
-  }
-  getTotalPrice() : number {
-    let grandTotal = 0;
-    this.cartItemList.map((a: any) => {
-      grandTotal += a.total;
-    })
-    return grandTotal;
+  setQty(product: Product, qty: number) {
+    if (qty <= 0) {
+      this.removeCartItems(product);
+      return;
+    }
+    const item = this.items.find((i) => i.product.id === product.id);
+    if (item) {
+      item.qty = qty;
+      this.emit();
+    }
   }
 
-  removeCartItems(product: any) {
-    this.cartItemList.map((a: any, index: any) => {
-      if (product.id === a.id) {
-        this.cartItemList.splice(index, 1);
-      }
-    })
-    this.productList.next(this.cartItemList);
+  removeCartItems(product: Product) {
+    this.items = this.items.filter((i) => i.product.id !== product.id);
+    this.emit();
   }
 
-  removeAll(){
-    this.cartItemList = []
-    this.productList.next(this.cartItemList);
+  removeAll() {
+    this.items = [];
+    this.emit();
   }
 
+  getCount(): number {
+    return this.items.reduce((sum, i) => sum + i.qty, 0);
+  }
 
+  getTotalPrice(): number {
+    return this.items.reduce((sum, i) => sum + i.product.price * i.qty, 0);
+  }
+
+  getSavings(): number {
+    return this.items.reduce((sum, i) => sum + (i.product.oldPrice - i.product.price) * i.qty, 0);
+  }
+
+  getShipping(): number {
+    const subtotal = this.getTotalPrice();
+    return subtotal === 0 || subtotal >= this.freeShippingAt ? 0 : this.shippingFee;
+  }
+
+  private emit() {
+    this.items$.next([...this.items]);
+  }
 }

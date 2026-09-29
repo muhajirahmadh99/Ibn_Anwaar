@@ -1,0 +1,33 @@
+<div class="page">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a routerLink="/home">Home</a>
+      <i class="bi bi-chevron-right"></i>
+      <span class="text-capitalize">{{ category }}</span>
+    </nav>
+
+    <div class="section-head">
+      <div>
+        <h1>{{ heading }}</h1>
+        <p>{{ description }}</p>
+      </div>
+
+      <div class="toolbar">
+        <span class="count">{{ products.length }} items</span>
+        <label class="sort">
+          <span class="visually-hidden">Sort by</span>
+          <select class="form-select" [(ngModel)]="sort" (ngModelChange)="applySort()">
+            <option value="featured">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+            <option value="discount">Biggest discount</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
+    </div>
+  </div>
+</div>

@@ -1,101 +1,51 @@
-<div class="bg-light">
-  <div class="container py-5">
-    <div class="row h-100 align-items-center py-5">
-      <div class="col-lg-8">
-        <h1 class="display-4">About Us</h1>
-        <p class="lead text-muted mb-0">WE ARE PROVIDE THE ISLAMIC THOBES FOR MEN & KIDS, WOMEN HIJAB & WOMEN SCARF IN
-          <b> ALL OVER INDIA.</b> </p>
-        <p class="lead text-muted">Provided by <a href="/home" class="text-muted">
-            <u>IBN ANWAAR SHOPPING</u></a>
-        </p>
-      </div>
-      <div class="col-lg-4">
-        <div class="">
-          <iframe class="youtube" width="380" height="360" src="https://www.youtube.com/embed/0puFEz_5dOQ" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-
+<section class="intro">
+  <div class="container intro-grid">
+    <div class="fade-up">
+      <span class="eyebrow">About us</span>
+      <h1>Modest clothing for the whole family</h1>
+      <p>
+        Ibn Anwaar brings Islamic thobes for men and kids, and hijabs, scarves and burkas for women, to homes all over
+        India. We choose every piece for modesty, comfort and lasting quality.
+      </p>
+      <div class="stats">
+        <div><strong>30+</strong><span>Styles</span></div>
+        <div><strong>All India</strong><span>Delivery</span></div>
+        <div><strong>COD</strong><span>Available</span></div>
       </div>
     </div>
+    <div class="video surface">
+      <iframe
+        src="https://www.youtube.com/embed/0puFEz_5dOQ"
+        title="Ibn Anwaar"
+        loading="lazy"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="bg-light">
+<section class="section">
   <div class="container">
-    <div class="row mb-4">
-      <div class="col-lg-5">
-        <h2 class="display-4 font-weight-light">Our Team</h2>
-        <p class="font-italic text-muted">Our teamates are spilt the work on front-end & back-end.</p>
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Our team</span>
+        <h2>The people behind the shop</h2>
+        <p>Our team splits the work across front-end, back-end and operations.</p>
       </div>
     </div>
 
-    <div class="row text-center">
-      <!-- Team item-->
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img
-            src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="100"
-            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">MUHAJIR AHMADH</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-          <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
+    <div class="team">
+      <div class="member surface" *ngFor="let m of team">
+        <div class="avatar">{{ initials(m.name) }}</div>
+        <h3>{{ m.name }}</h3>
+        <span>{{ m.role }}</span>
+        <div class="social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
-      <!-- End-->
-
-      <!-- Team item-->
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img
-            src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="100"
-            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">SHEIKH SHIHAM</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-          <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End-->
-
-      <!-- Team item-->
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img
-            src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="100"
-            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">SIRAJUDDEEN</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-          <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End-->
-
-      <!-- Team item-->
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img
-            src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png" alt="" width="100"
-            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">SHEIKH</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-          <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End-->
-
     </div>
   </div>
-</div>
+</section>

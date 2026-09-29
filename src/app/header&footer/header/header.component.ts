@@ -1,36 +1,48 @@
-import { Component, OnInit } from '@angular/core';
-import { gsap } from 'gsap';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { AddcartService } from 'src/app/services/addcart.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
+  totalItem = 0;
+  menuOpen = false;
+  scrolled = false;
+  bump = false;
 
-  public totalItem : number = 0;
-  constructor(private cartService : AddcartService) {
-   }
+  links = [
+    { path: '/home', label: 'Home' },
+    { path: '/men', label: 'Men' },
+    { path: '/women', label: 'Women' },
+    { path: '/kids', label: 'Kids' },
+    { path: '/about', label: 'About' },
+    { path: '/contact', label: 'Contact' },
+  ];
+
+  private sub?: Subscription;
+
+  constructor(private cartService: AddcartService) {}
 
   ngOnInit(): void {
-    const timeline = gsap.timeline({ defaults:{duration : 1}})
-timeline
-  // .from('img',{x: '-100%',ease : 'bounce'})
-  // .from('.img',{y: 160,ease : "back"})
-  // .from('.navbar',{x: '-100%',ease : 'bounce'})
-  // .from(".nav-link", {rotation: -360, x: -100,})
-  // .from('.nav-link,.btn',{y: 2,x:-14,stagger:0.1,ease : "back"})
-  // .from(".btn", {rotation: -360, y: -100,});
-
-  this.cartService.getProducts()
-  .subscribe(res =>{ 
-    this.totalItem = res.length
-  })
+    this.sub = this.cartService.getItems().subscribe(() => {
+      const count = this.cartService.getCount();
+      if (count > this.totalItem) {
+        this.bump = false;
+        setTimeout(() => (this.bump = true));
+      }
+      this.totalItem = count;
+    });
   }
-  
-  myname = "Welcome muhajir"
-  welcome(name: any){
-    alert(name)
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
+  }
+
+  @HostListener('window:scroll')
+  onScroll() {
+    this.scrolled = window.scrollY > 8;
   }
 }

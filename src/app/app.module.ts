@@ -1,5 +1,6 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header&footer/header/header.component';
@@ -19,7 +20,9 @@ import { TrackComponent } from './content-pages/track/track.component';
 import { AddcartComponent } from './content-pages/addcart/addcart.component';
 import { ViewpageComponent } from './content-pages/viewpage/viewpage.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { ModalComponent } from './content-pages/modal/modal.component';
+import { ProductCardComponent } from './shared/product-card/product-card.component';
+import { CategoryPageComponent } from './shared/category-page/category-page.component';
+import { MiniSummaryComponent } from './shared/mini-summary/mini-summary.component';
 
 @NgModule({
   declarations: [
@@ -40,10 +43,13 @@ import { ModalComponent } from './content-pages/modal/modal.component';
     TrackComponent,
     AddcartComponent,
     ViewpageComponent,
-    ModalComponent,
+    ProductCardComponent,
+    CategoryPageComponent,
+    MiniSummaryComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),

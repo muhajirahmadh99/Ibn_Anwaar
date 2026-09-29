@@ -1,38 +1,67 @@
-<div class="container-xl">
-	<div class="row">
-		<div class="col-md-8 mx-auto">
-			<div class="contact-form">
-				<h1>Contact Us</h1>
-				<p class="hint-text">We'd love to hear from you, please drop us a line if you've any query.</p>
-				<div class="d-flex gap-5 justify-content-center">
-					<form action="/examples/actions/confirmation.php" method="post">
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label for="inputFirstName">First Name</label>
-									<input type="text" class="form-control" id="inputFirstName" required>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label for="inputLastName">Last Name</label>
-									<input type="text" class="form-control" id="inputLastName" required>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="inputEmail">Email Address</label>
-							<input type="email" class="form-control" id="inputEmail" required>
-						</div>
-						<div class="form-group">
-							<label for="inputMessage">Reason</label>
-							<textarea class="form-control" id="inputMessage" rows="5" placeholder="type the reason"
-								required></textarea>
-						</div>
-						<input type="submit" class="btn mt-2" value="Submit">
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="page">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h1>We'd love to hear from you</h1>
+        <p>Questions about sizing, orders or bulk requests? Drop us a line.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="cards">
+        <a class="c surface" href="tel:+919626260457">
+          <i class="bi bi-telephone"></i>
+          <div><strong>Call us</strong><span>+91 96262 60457</span></div>
+        </a>
+        <a class="c surface" href="mailto:muhajir@hasnatech.onmicrosoft.com">
+          <i class="bi bi-envelope"></i>
+          <div><strong>Email</strong><span>muhajir@hasnatech.onmicrosoft.com</span></div>
+        </a>
+        <div class="c surface">
+          <i class="bi bi-geo-alt"></i>
+          <div><strong>Visit</strong><span>57/A, Ambethkar Nagar, Pkt Road, Adirampattinam</span></div>
+        </div>
+      </div>
+
+      <form class="surface panel" #f="ngForm" (ngSubmit)="submit(f)" novalidate>
+        <ng-container *ngIf="!sent; else thanks">
+          <div class="row gx-3">
+            <div class="form-group col-sm-6">
+              <label for="fn">First name</label>
+              <input id="fn" name="firstName" class="form-control" [(ngModel)]="model.firstName" #fn="ngModel" required
+                [class.is-invalid]="fn.invalid && fn.touched" />
+              <div class="invalid-feedback">Please enter your first name.</div>
+            </div>
+            <div class="form-group col-sm-6">
+              <label for="ln">Last name</label>
+              <input id="ln" name="lastName" class="form-control" [(ngModel)]="model.lastName" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="em">Email</label>
+            <input id="em" name="email" type="email" class="form-control" [(ngModel)]="model.email" #em="ngModel" required email
+              [class.is-invalid]="em.invalid && em.touched" />
+            <div class="invalid-feedback">Enter a valid email address.</div>
+          </div>
+          <div class="form-group">
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" rows="5" class="form-control" placeholder="How can we help?"
+              [(ngModel)]="model.message" #msg="ngModel" required [class.is-invalid]="msg.invalid && msg.touched"></textarea>
+            <div class="invalid-feedback">Please write a message.</div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">Send message <i class="bi bi-send ms-1"></i></button>
+        </ng-container>
+
+        <ng-template #thanks>
+          <div class="thanks">
+            <i class="bi bi-check-circle-fill"></i>
+            <h2>Message sent</h2>
+            <p class="text-muted">JazakAllahu khairan, {{ model.firstName }}. We'll reply within a day.</p>
+            <button type="button" class="btn btn-outline-dark" (click)="sent = false">Send another</button>
+          </div>
+        </ng-template>
+      </form>
+    </div>
+  </div>
 </div>

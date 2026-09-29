@@ -1,75 +1,58 @@
-<div class="arrow p-3" title="Go To Top"><a *ngIf="isShow" (click)="gotoTop()"><i class="bi bi-caret-up-square"></i></a> </div>
-<footer class="footer-distributed">
+<section class="perks">
+  <div class="container perks-grid">
+    <div class="perk" *ngFor="let p of perks">
+      <i class="bi" [ngClass]="p.icon"></i>
+      <div>
+        <strong>{{ p.title }}</strong>
+        <span>{{ p.text }}</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-			<div class="footer-left">
+<footer class="site-footer">
+  <div class="container">
+    <div class="cols">
+      <div class="about">
+        <a routerLink="/home" class="logo"><img src="assets/logo.png" alt="Ibn Anwaar" /></a>
+        <p>
+          Modest clothing made with care, following the Sunnah. Thank you for supporting our shop, brothers and
+          sisters. May Allah reward you.
+        </p>
+        <div class="social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
 
-				<a routerLink="/home"><img src="assets/logo.png" alt="Nature" class="responsive" id="img"></a>
+      <div>
+        <h4>Shop</h4>
+        <a routerLink="/men">Men</a>
+        <a routerLink="/women">Women</a>
+        <a routerLink="/kids">Kids</a>
+        <a routerLink="/addcart">Cart</a>
+      </div>
 
-				<p class="footer-links">
-					<a class="nav-link" routerLink="">Home</a>
+      <div>
+        <h4>Company</h4>
+        <a routerLink="/about">About us</a>
+        <a routerLink="/contact">Contact</a>
+        <a routerLink="/track">Track order</a>
+      </div>
 
+      <div class="contact">
+        <h4>Get in touch</h4>
+        <p><i class="bi bi-geo-alt"></i> 57/A, Ambethkar Nagar, Pkt Road, Adirampattinam</p>
+        <p><i class="bi bi-telephone"></i> <a href="tel:+919626260457">+91 96262 60457</a></p>
+        <p><i class="bi bi-envelope"></i> <a href="mailto:muhajirahamed@gmail.com">muhajirahamed@gmail.com</a></p>
+      </div>
+    </div>
 
-
-					<a class="nav-link" routerLink="/about">About
-					  Us</a>
-			
-			
-			
-					<a class="nav-link" routerLink="/contact" data-toggle="collapse"
-					  data-target="#navbarSupportedContent">Contact</a>
-			
-			
-			
-					<a class="nav-link" routerLink="/men">Men</a>
-			
-			
-			
-					<a class="nav-link" routerLink="/women">Women</a>
-			
-			
-			
-					<a class="nav-link" routerLink="/kids">Kids</a>
-				</p>
-
-				<p class="footer-company-name">Muhajir Ibn Anwar © 2022</p>
-			</div>
-
-			<div class="footer-center">
-
-				<div>
-					<i class="bi bi-geo-alt mt-2 mb-2"></i>
-					<p><span>57/A,Ambethkar Nagar</span> Pkt Road, Adirampattinam.</p>
-				</div>
-
-				<div>
-					<i class="bi bi-phone"></i>
-					<p>+91-9626260457</p>
-				</div>
-
-				<div>
-					<i class="bi bi-envelope" style="margin-left: 20px;"></i>
-					<p><a>muhajirahamed@gmail.com</a></p> 
-				</div>
-
-			</div>
-
-			<div class="footer-right">
-
-				<p class="footer-company-about">
-					<span>About the company</span>
-					It's a Company is follow shari'ah which means following muhammad (saw). <br>
-					Hope you my brothers & sisters pls support our Company.May Great Reward For U!
-				</p>
-
-				<div class="footer-icons">
-
-					<a href="#"><i class="bi bi-facebook"></i></a>
-					<a href="#"><i class="bi bi-twitter"></i></a>
-					<a href="#"><i class="bi bi-linkedin"></i></a>
-					<a href="#"><i class="bi bi-github"></i></a>
-
-				</div>
-
-			</div>
-
-		</footer>
+    <div class="bottom">
+      <span>© {{ year }} Ibn Anwaar. All rights reserved.</span>
+      <span>Designed by Muhajir Ibn Anwar</span>
+    </div>
+  </div>
+</footer>

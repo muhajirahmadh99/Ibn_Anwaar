@@ -1,28 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
-// export class ContactComponent implements OnInit {
+export class ContactComponent {
+  model = { firstName: '', lastName: '', email: '', message: '' };
+  sent = false;
 
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
-
-// // }
-
-//  property binding 
-export class ContactComponent{
-
-  isDisabled:boolean = true;
-  searchvalue:string = "34";
-  name = "type the reason";
-
-  changename(){
-    this.searchvalue = '56';
+  submit(f: NgForm) {
+    if (f.invalid) {
+      f.control.markAllAsTouched();
+      return;
+    }
+    this.sent = true;
   }
-
 }

@@ -1,27 +1,43 @@
+<div class="page auth">
+  <div class="container">
+    <form class="surface form-card fade-up" #f="ngForm" (ngSubmit)="submit(f)" novalidate>
+      <h1>Welcome back</h1>
+      <p class="lead-sm">Log in to track orders and check out faster.</p>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-          
-            <div class="login-form">    
-                <form action="/examples/actions/confirmation.php" method="post">
-                    <div class="avatar"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"></div>
-                    <h4 class="modal-title">Login to Your Account</h4>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Username" required="required">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password" required="required">
-                    </div>
-                    <div class="form-group small clearfix">
-                        <label class="form-check-label"><input type="checkbox"> Remember me</label>
-                        <a href="#" class="forgot-link">Forgot Password?</a>
-                    </div> 
-                    <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">              
-                </form>			
-                <div class="text-center small">Don't have an account? <a routerLink='/register'>Sign up</a></div>
-            </div>
-
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-icon">
+          <i class="bi bi-envelope"></i>
+          <input id="email" name="email" type="email" class="form-control" [(ngModel)]="email" #em="ngModel" required email
+            [class.is-invalid]="em.invalid && em.touched" autocomplete="email" />
+          <div class="invalid-feedback">Enter a valid email address.</div>
         </div>
-    </div>
+      </div>
+
+      <div class="form-group">
+        <div class="d-flex justify-content-between">
+          <label for="pw">Password</label>
+          <a href="#" class="small">Forgot password?</a>
+        </div>
+        <div class="input-icon">
+          <i class="bi bi-lock"></i>
+          <input id="pw" name="password" [type]="show ? 'text' : 'password'" class="form-control pe-5" [(ngModel)]="password"
+            #pw="ngModel" required [class.is-invalid]="pw.invalid && pw.touched" autocomplete="current-password" />
+          <button type="button" class="peek" (click)="show = !show" [attr.aria-label]="show ? 'Hide password' : 'Show password'">
+            <i class="bi" [ngClass]="show ? 'bi-eye-slash' : 'bi-eye'"></i>
+          </button>
+          <div class="invalid-feedback">Please enter your password.</div>
+        </div>
+      </div>
+
+      <div class="form-check mb-4">
+        <input type="checkbox" class="form-check-input" id="remember" name="remember" [(ngModel)]="remember" />
+        <label class="form-check-label" for="remember">Remember me</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg w-100">Log in</button>
+
+      <p class="switch">New to Ibn Anwaar? <a routerLink="/register">Create an account</a></p>
+    </form>
+  </div>
 </div>

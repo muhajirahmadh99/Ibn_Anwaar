@@ -1,452 +1,89 @@
-import { Injectable, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
-import { gsap, TimelineMax, Power0 } from 'gsap';
-import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
+import { Injectable } from '@angular/core';
+
+export type Category = 'men' | 'women' | 'kids';
+
+export interface Product {
+  id: string;
+  name: string;
+  image: string;
+  price: number;
+  oldPrice: number;
+  category: Category;
+}
+
+// [name, image, price, oldPrice]
+type Row = [string, string, number, number];
+
+function build(category: Category, prefix: string, rows: Row[]): Product[] {
+  return rows.map(([name, image, price, oldPrice], i) => ({
+    id: `${prefix}${i + 1}`,
+    name,
+    image,
+    price,
+    oldPrice,
+    category,
+  }));
+}
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GlobalService {
+  readonly categories: { key: Category; title: string; subtitle: string; image: string }[] = [
+    { key: 'men', title: 'Men', subtitle: 'Thobes & kurtas', image: 'assets/man/man6.png' },
+    { key: 'women', title: 'Women', subtitle: 'Hijabs, scarves & burkas', image: 'assets/women/women1.png' },
+    { key: 'kids', title: 'Kids', subtitle: 'Little thobes', image: 'assets/kids/kidfront.png' },
+  ];
 
-  constructor(private router: Router) { }
+  mendetails: Product[] = build('men', 'm', [
+    ['Black Thobe', 'assets/man/man1.png', 36, 40],
+    ['Blue Thobe', 'assets/man/man2.png', 23.99, 25],
+    ['Purple Thobe', 'assets/man/man3.png', 69, 89],
+    ['Multi Thobe', 'assets/man/man4.png', 25, 31],
+    ['Dark Blue Thobe', 'assets/man/man5.png', 39, 40],
+    ['Sky Blue Thobe', 'assets/man/man6.png', 23.99, 25],
+    ['Emirati Brown', 'assets/man/man7.png', 49, 89],
+    ['Green Thobe', 'assets/man/man8.png', 25, 31],
+  ]);
 
-  // MAIN
+  womendetails: Product[] = build('women', 'w', [
+    ['Pakistani Burka', 'assets/women/women8.png', 36, 40],
+    ['Indian Burka', 'assets/women/women9.png', 23.99, 25],
+    ['Full Hijab I', 'assets/women/women10.png', 69, 89],
+    ['Full Hijab II', 'assets/women/women11.png', 25, 31],
+    ['Light Brown Scarf', 'assets/women/women4.png', 39, 40],
+    ['Milk White Scarf', 'assets/women/women5.png', 23.99, 25],
+    ['Dark Green Scarf', 'assets/women/women6.png', 49, 89],
+    ['Light Grey Scarf', 'assets/women/women7.png', 25, 31],
+    ['Pink Scarf', 'assets/women/women.png', 69, 89],
+  ]);
 
-  maindetails: any = [
-    {
-      id: 1,
-      head: "BLACK THOBE",
-      carimg: "assets/man/man1.png",
-      price: `<del>$40.00</del> <b>$30.00</b>`,
-    },
-    {
-      id: 2,
-      head: "GREEN THOBE",
-      carimg: "assets/man/man8.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 3,
-      head: "DARK BLACK THOBE",
-      carimg: "assets/man/man2.png",
-      price: `<del>$80.00</del> <b>$49.00</b>`
-    },
-    {
-      id: 4,
-      head: "BLUE THOBE",
-      carimg: "assets/man/man2.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-    {
-      id: 5,
-      head: "PINK SCARF",
-      carimg: "assets/women/women.png",
-      price: `<del>$40.00</del> <b>$30.00</b>`
-    },
-    {
-      id: 6,
-      head: "LIGHT BROWN THOBE",
-      carimg: "assets/women/women4.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 7,
-      head: "FULL HIJAB-1",
-      carimg: "assets/women/women10.png",
-      price: `<del>$89.00</del> <b>$49.00</b>`
-    },
-    {
-      id: 8,
-      head: "FULL HIJAB-2",
-      carimg: "assets/women/women11.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-    {
-      id: 9,
-      head: "BLUE THOBE",
-      carimg: "assets/kids/kid1.png",
-      price: `<del>$40.00</del> <b>$36.00</b>`
-    },
-    {
-      id: 10,
-      head: "LIGHT GREY THOBE",
-      carimg: "assets/kids/kid4.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 11,
-      head: "BLACK THOBE",
-      carimg: "assets/kids/kid2.png",
-      price: `<del>$89.00</del> <b>$69.00</b>`
-    },
-    {
-      id: 12,
-      head: "GREY THOBE",
-      carimg: "assets/kids/kid3.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-  ]
+  kidsdetails: Product[] = build('kids', 'k', [
+    ['Blue Thobe', 'assets/kids/kid1.png', 39, 40],
+    ['Black Thobe', 'assets/kids/kid2.png', 23.99, 25],
+    ['Grey Thobe', 'assets/kids/kid3.png', 25, 31],
+    ['Charcoal Thobe', 'assets/kids/kid4.png', 49, 80],
+    ['Maroon Thobe', 'assets/kids/kid5.png', 25, 31],
+    ['Multi Thobe I', 'assets/kids/kid6.png', 49, 89],
+    ['Multi Thobe II', 'assets/kids/kid7.png', 25, 31],
+    ['White Thobe', 'assets/kids/kid8.png', 36, 40],
+  ]);
 
+  get allProducts(): Product[] {
+    return [...this.mendetails, ...this.womendetails, ...this.kidsdetails];
+  }
 
-  // MEN
-  mendetails: any = [
-    {
-      id: 1,
-      head: "BLACK THOBE",
-      carimg: "assets/man/man1.png",
-      price: `<del>$40.00</del> <b>$36.00</b>`,
-    },
-    {
-      id: 2,
-      head: "BLUE THOBE",
-      carimg: "assets/man/man2.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 3,
-      head: "PURPLE THOBE",
-      carimg: "assets/man/man3.png",
-      price: `<del>$89.00</del> <b>$69.00</b>`
-    },
-    {
-      id: 4,
-      head: "MULTI THOBE",
-      carimg: "assets/man/man4.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-    {
-      id: 5,
-      head: "DARK BLUE THOBE",
-      carimg: "assets/man/man5.png",
-      price: `<del>$40.00</del> <b>$39.00</b>`
-    },
-    {
-      id: 6,
-      head: "BLUE THOBE",
-      carimg: "assets/man/man6.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 7,
-      head: "EMIRATI BROWN",
-      carimg: "assets/man/man7.png",
-      price: `<del>$89.00</del> <b>$49.00</b>`
-    },
-    {
-      id: 8,
-      head: "FULL HIJAB-2",
-      carimg: "assets/man/man8.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-    {
-      id: 9,
-      head: "BLUE THOBE",
-      carimg: "assets/man/man1.png",
-      price: `<del>$40.00</del> <b>$36.00</b>`
-    },
-    {
-      id: 10,
-      head: "PURPLE THOBE",
-      carimg: "assets/man/man3.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 11,
-      head: "DARK BLUE THOBE",
-      carimg: "assets/man/man2.png",
-      price: `<del>$89.00</del> <b>$69.00</b>`
-    },
-    {
-      id: 12,
-      head: "BLUE THOBE",
-      carimg: "assets/man/man5.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-  ]
+  // Trending picks shown on the home page
+  get maindetails(): Product[] {
+    const ids = ['m1', 'm8', 'm7', 'm3', 'w10', 'w1', 'w3', 'w5', 'k1', 'k5', 'k4', 'k8'];
+    return ids.map((id) => this.findById(id)!).filter(Boolean);
+  }
 
-  // WOMEN
+  findById(id: string | null): Product | undefined {
+    return this.allProducts.find((p) => p.id === id);
+  }
 
-  womendetails: any = [
-    {
-      id: 1,
-      head: "PAKISTANI BURKA",
-      carimg: "assets/women/women8.png",
-      price: `<del>$40.00</del> <b>$36.00</b>`,
-    },
-    {
-      id: 2,
-      head: "INDIA BURKA",
-      carimg: "assets/women/women5.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 3,
-      head: "FULL HIJAB-1",
-      carimg: "assets/women/women10.png",
-      price: `<del>$89.00</del> <b>$69.00</b>`
-    },
-    {
-      id: 4,
-      head: "FULL HIJAB-2",
-      carimg: "assets/women/women11.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-    {
-      id: 5,
-      head: "LIGHT BROWN SCARF",
-      carimg: "assets/women/women4.png",
-      price: `<del>$40.00</del> <b>$39.00</b>`
-    },
-    {
-      id: 6,
-      head: "MILK WHITE SCARF",
-      carimg: "assets/women/women5.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 7,
-      head: "DARK GREEN SCARF",
-      carimg: "assets/women/women6.png",
-      price: `<del>$89.00</del> <b>$49.00</b>`
-    },
-    {
-      id: 8,
-      head: "LIGHT GREY",
-      carimg: "assets/women/women7.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-    {
-      id: 9,
-      head: "MILK WHITE SCARF",
-      carimg: "assets/women/women5.png",
-      price: `<del>$40.00</del> <b>$36.00</b>`
-    },
-    {
-      id: 10,
-      head: "LIGHT GREY SCARF",
-      carimg: "assets/women/women7.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 11,
-      head: "PINK SCARF",
-      carimg: "assets/women/women.png",
-      price: `<del>$89.00</del> <b>$69.00</b>`
-    },
-    {
-      id: 12,
-      head: "LIGHT BROWN SCARF",
-      carimg: "assets/women/women4.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-  ]
-
-
-  // KIDS
-  kidsdetails: any = [
-    {
-      id: 1,
-      head: "BLUE THOBE",
-      carimg: "assets/kids/kid1.png",
-      price: `<del>$40.00</del> <b>$39.00</b>`,
-    },
-    {
-      id: 2,
-      head: "BLACK THOBE",
-      carimg: "assets/kids/kid2.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 3,
-      head: "GREY THOBE",
-      carimg: "assets/kids/kid4.png",
-      price: `<del>$80.00</del> <b>$49.00</b>`
-    },
-    {
-      id: 4,
-      head: "MAROON THOBE",
-      carimg: "assets/kids/kid5.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-    {
-      id: 5,
-      head: "GREY THOBE",
-      carimg: "assets/kids/kid4.png",
-      price: `<del>$40.00</del> <b>$30.00</b>`
-    },
-    {
-      id: 6,
-      head: "MAROON THOBE",
-      carimg: "assets/kids/kid5.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 7,
-      head: "MULTI THOBE-1",
-      carimg: "assets/kids/kid6.png",
-      price: `<del>$89.00</del> <b>$49.00</b>`
-    },
-    {
-      id: 8,
-      head: "MULTI THOBE-2",
-      carimg: "assets/kids/kid7.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-    {
-      id: 9,
-      head: "WHITE THOBE",
-      carimg: "assets/kids/kid8.png",
-      price: `<del>$40.00</del> <b>$36.00</b>`
-    },
-    {
-      id: 10,
-      head: "BLUE THOBE",
-      carimg: "assets/kids/kid1.png",
-      price: `<del>$25.00</del> <b>$23.99</b>`
-    },
-    {
-      id: 11,
-      head: "BLACK THOBE",
-      carimg: "assets/kids/kid2.png",
-      price: `<del>$89.00</del> <b>$69.00</b>`
-    },
-    {
-      id: 12,
-      head: "GREY THOBE",
-      carimg: "assets/kids/kid3.png",
-      price: `<del>$31.00</del> <b>$25.00</b>`
-    },
-  ]
-
-
-  // Animation Code
-  // animateOnScroll() {
-  //   const faders = document.querySelectorAll(".ht_aos");
-  //   console.log("faders ", faders.length)
-  //   faders.forEach(entry => {
-  //     gsap.set(entry.querySelectorAll(".anim"),
-  //       { y: 80, opacity: 0 })
-  //   });
-
-
-  //   const appearOptions = {
-  //     threshold: 0,
-  //     rootMargin: "0px 0px -250px 0px"
-  //   };
-
-  //   const appearOnScroll = new IntersectionObserver(function (
-  //     entries,
-  //     appearOnScroll
-  //   ) {
-  //     let i = 0;
-  //     let divs = [];
-  //     entries.forEach(entry => {
-  //       if (!entry.isIntersecting) {
-  //         return;
-  //       } else {
-  //         i++;
-  //         let animate = entry.target.getAttribute('data-anim');
-
-  //         if (animate) {
-  //           entry.target.classList.add(animate);
-  //         } else {
-  //           // entry.target.classList.add("appear");
-  //           // console.log(entry.target.querySelectorAll(".anim"));
-  //           // divs.push(entry.target);
-
-  //           gsap.to(entry.target.querySelectorAll(".anim"),
-  //             { y: 0, opacity: 1, stagger: 0.35 })
-  //         }
-  //         appearOnScroll.unobserve(entry.target);
-  //       }
-  //     });
-  //     // console.log(divs);
-  //     // gsap.to(divs, { y: 0, opacity: 1, stagger: 1 })
-  //   },
-  //     appearOptions);
-
-  //   faders.forEach(fader => {
-  //     appearOnScroll.observe(fader);
-  //   });
-
-  // }
-
-  // animate(name = '', aduioSync = true) {
-  //   //console.log(this.tl)
-  //   this.tl.clear();
-  //   gsap.ticker.lagSmoothing(0);
-  //   this.tl = new TimelineMax();
-  //   //console.log(2, this.tl)
-  //   //  gsap.to(myDiv, { duration: 2, scrollTo: 250 }); 
-  //   let elems;
-  //   if (name == '') {
-  //     elems = document.querySelectorAll('[data-animatetime]');
-  //   } else {
-  //     elems = document.querySelectorAll('[data-animatename=' + name + ']');
-  //   }
-  //   // console.log(elems);
-  //   elems.forEach((element: any) => {
-  //     if (element['dataset'].animatetype == 'scroll') {
-  //       // scroll animation
-  //       console.log('scroll', element.id);
-  //       this.tl.to(
-  //         window,
-  //         { scrollTo: '#' + element.id, duration: 0.4, ease: Power0.easeNone },
-  //         element['dataset'].animatetime
-  //       );
-  //     } else {
-  //       // slide animation
-  //       if (element['dataset'].animatefrom == 'right') {
-  //         this.tl.fromTo(
-  //           element,
-  //           { opacity: 0, x: 100 },
-  //           { x: 0, duration: 0.5, opacity: 1 },
-  //           element['dataset'].animatetime
-  //         );
-  //       } else if (element['dataset'].animatefrom == 'left') {
-  //         this.tl.fromTo(
-  //           element,
-  //           { opacity: 0, x: -100 },
-  //           { x: 0, duration: 0.5, opacity: 1 },
-  //           element['dataset'].animatetime
-  //         );
-  //       } else if (element['dataset'].animatefrom == 'left-right') {
-  //         this.tl.fromTo(
-  //           element,
-  //           { opacity: 1, x: 0 },
-  //           { x: -200, duration: 0.5, opacity: 0 },
-  //           element['dataset'].animatetime
-  //         );
-  //       } else if (element['dataset'].animatefrom == 'fade-in') {
-  //         this.tl.fromTo(
-  //           element,
-  //           { opacity: 0, x: 0 },
-  //           { x: 0, duration: 0.5, opacity: 1 },
-  //           element['dataset'].animatetime
-  //         );
-  //       } else if (element['dataset'].animatefrom == 'fade-up') {
-  //         this.tl.fromTo(
-  //           element,
-  //           { opacity: 0, y: 10 },
-  //           { x: 0, y: 0, duration: 0.5, opacity: 1 },
-  //           element['dataset'].animatetime
-  //         );
-  //       } else {
-  //         this.tl.fromTo(
-  //           element,
-  //           { opacity: 0, y: -50 },
-  //           { y: 0, duration: 0.5, opacity: 1 },
-  //           element['dataset'].animatetime
-  //         );
-  //       }
-  //     }
-  //     //console.log(aduioSync);
-  //     if (aduioSync) {
-  //       this.tl.pause();
-  //     } else {
-  //       this.tl.play();
-  //     }
-
-  //     // console.log(element, element['dataset'].animatetime);
-  //   });
-  // }
+  byCategory(category: Category): Product[] {
+    return this.allProducts.filter((p) => p.category === category);
+  }
 }

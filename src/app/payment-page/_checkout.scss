@@ -1,0 +1,138 @@
+// Shared by the delivery (cod) and payment (pay) steps
+.steps {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  margin: 0 0 28px;
+  font-size: 14px;
+  color: var(--muted);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    & + li::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .done {
+    color: var(--brand);
+  }
+
+  .on {
+    color: var(--ink);
+    font-weight: 600;
+  }
+}
+
+.checkout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  align-items: start;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  padding: 32px;
+
+  @media (max-width: 575px) {
+    padding: 22px 18px;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    margin-bottom: 4px;
+  }
+}
+
+.h-sub {
+  font-size: 1.5rem;
+  margin: 12px 0 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.input-group-text {
+  background: var(--surface-2);
+  border-color: var(--line);
+}
+
+.methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  @media (max-width: 575px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.method {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  margin: 0;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: var(--surface);
+  transition: border-color 0.15s ease, background 0.15s ease;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  > i {
+    font-size: 22px;
+    color: var(--muted);
+  }
+
+  span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  small {
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  &:hover {
+    border-color: var(--muted);
+  }
+
+  &.on {
+    border-color: var(--brand);
+    background: var(--brand-50);
+
+    > i {
+      color: var(--brand);
+    }
+  }
+
+  &:focus-within {
+    box-shadow: 0 0 0 3px rgba(31, 77, 58, 0.15);
+  }
+}

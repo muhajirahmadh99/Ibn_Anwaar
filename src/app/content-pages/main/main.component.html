@@ -1,165 +1,70 @@
-<div class="p-5 bg shadow-lg">
-	<div class="pt-5 pb-2 mt-5 top">
-		<div>Welcome to IbnAnwaar Online Shop</div>
-		<div>This is a <b>Islamic</b> Dresses For Men,Women & Kids</div>
-		<div>
-			<marquee>Let's Go What You Want</marquee>
-		</div>
-	</div>
-</div>
-<div class="container">
+<section class="hero">
+  <div class="container hero-inner fade-up">
+    <span class="eyebrow">New season · Thobes & Hijabs</span>
+    <h1>Modest wear,<br />made with care.</h1>
+    <p>Islamic clothing for men, women and kids — thoughtfully made and delivered across India.</p>
+    <div class="cta">
+      <a routerLink="/men" class="btn btn-light btn-lg">Shop men</a>
+      <a routerLink="/women" class="btn btn-outline-light btn-lg">Shop women</a>
+    </div>
+  </div>
+</section>
 
-	<!--Start code-->
-	<!--SECTION START-->
-	<section class="row">
-		<!--Start slider news-->
-		<div class="col-12 col-md-6 pb-0 pb-md-3 pt-2 pr-md-1">
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Collections</span>
+        <h2>Shop by category</h2>
+      </div>
+    </div>
 
+    <div class="cats">
+      <a *ngFor="let c of service.categories" [routerLink]="'/' + c.key" class="cat-tile">
+        <img [src]="c.image" [alt]="c.title" />
+        <div class="cat-label">
+          <div>
+            <h3>{{ c.title }}</h3>
+            <span>{{ c.subtitle }}</span>
+          </div>
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
-			<!--carousel inner-->
+<section class="section pt-0">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Best sellers</span>
+        <h2>Trending now</h2>
+      </div>
+      <a routerLink="/men" class="btn btn-outline-dark">View all <i class="bi bi-arrow-right ms-1"></i></a>
+    </div>
 
-			<div class="carousel-inner">
-				<!--Item slider-->
-				<div class="carousel-item active">
-					<div class="card border-0 rounded-0 text-light overflow zoom">
-						<div class="position-relative">
-							<!--thumbnail img-->
-							<div class="ratio_left-cover-1 image-wrapper">
+    <div class="product-grid">
+      <app-product-card *ngFor="let p of service.maindetails" [product]="p"></app-product-card>
+    </div>
+  </div>
+</section>
 
-								<img class="img-fluid w-100" src="assets/man/man6.png" alt="Bootstrap news template">
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--end item slider-->
-			</div>
-			<!--end carousel inner-->
-		</div>
-
-
-		<!--End slider news-->
-
-		<!--Start box news-->
-		<div class="col-12 col-md-6 pt-2 pl-md-1 mb-3 mb-lg-4">
-			<div class="row">
-				<!--news box-->
-				<div class="col-6 pb-1 pt-0 pr-1">
-					<div class="card border-0 rounded-0 text-white overflow zoom">
-						<div class="position-relative">
-							<!--thumbnail img-->
-							<div class="ratio_right-cover-2 image-wrapper">
-
-								<img class="img-fluid" src="assets/man/front.jpeg" alt="simple blog template bootstrap">
-
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!--news box-->
-				<div class="col-6 pb-1 pl-1 pt-0">
-					<div class="card border-0 rounded-0 text-white overflow zoom">
-						<div class="position-relative">
-							<!--thumbnail img-->
-							<div class="ratio_right-cover-2 image-wrapper">
-								<img class="img-fluid" src="assets/women/women3.png" alt="bootstrap templates for blog">
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!--news box-->
-				<div class="col-6 pb-1 pr-1 pt-1">
-					<div class="card border-0 rounded-0 text-white overflow zoom">
-						<div class="position-relative">
-							<!--thumbnail img-->
-							<div class="ratio_right-cover-2 image-wrapper">
-
-								<img class="img-fluid" src="assets/women/women1.png"
-									alt="bootstrap blog wordpress theme">
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!--news box-->
-				<div class="col-6 pb-1 pl-1 pt-1">
-					<div class="card border-0 rounded-0 text-white overflow zoom">
-						<div class="position-relative">
-							<!--thumbnail img-->
-							<div class="ratio_right-cover-2 image-wrapper">
-
-								<img class="img-fluid" src="assets/kids/kidfront.png"
-									alt="blog website templates bootstrap">
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-				<!--end news box-->
-			</div>
-		</div>
-		<!--End box news-->
-	</section>
-	<!--END SECTION-->
-	<!-- <section> -->
-
-	<!--end code-->
-</div>
-
-
-<!--2nd-->
-<div class="container-xl">
-	<div class="row">
-		<div class="col-md-12">
-			<h2>Trending<b> Collections</b></h2>
-			<div id="myCarousel" class="carousel slide">
-				<div class="carousel-inner">
-					<div class="item carousel-item active">
-						<div class="row anim" data-animatetime='0' data-animatefrom="fade-up">
-							<div class="col-md-3 zoom" *ngFor="let data of service.maindetails;">
-								<div class="thumb-wrapper">
-									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-									<div class="img-box mt-4">
-										<img src="{{data.carimg}}" class="img-fluid" alt="Apple iPad">
-									</div>
-									<div class="thumb-content">
-										<div class="title">{{data.head}}</div>
-										<div class="star-rating">
-											<ul class="list-inline">
-												<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-											</ul>
-										</div>
-										<p class="item-price" [innerHtml]="data.price"></p>
-										<div class="gap mt-3 mb-3">
-											<button class="btn btn-secondary btn-sm mb-2" (click)="addToCart(data)"
-												data-bs-toggle="modal" data-bs-target="#exampleModal">Add to
-												Cart</button>
-
-											<button class="btn btn-secondary btn-sm mb-2" routerLink="/cod">Buy
-												Now</button>
-
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-</div>
-
-<app-modal></app-modal>
+<section class="section pt-0">
+  <div class="container">
+    <div class="story">
+      <div class="story-text">
+        <span class="eyebrow">Our promise</span>
+        <h2>Clothing that follows the Sunnah</h2>
+        <p>
+          Every piece is chosen for modesty, comfort and quality fabric — so you can dress with dignity for salah,
+          Eid and every day in between.
+        </p>
+        <a routerLink="/about" class="btn btn-light">Our story</a>
+      </div>
+      <div class="story-img">
+        <img src="assets/man/front.jpeg" alt="Thobe detail" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>

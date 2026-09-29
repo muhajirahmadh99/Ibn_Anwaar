@@ -1,60 +1,96 @@
-<!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button class="btn btn-primary me-md-2" type="button"  rel="stylesheet" routerLink="/track" id="but">TRACK YOUR ORDER</button>
-</div>  -->
+<div class="page">
+  <div class="container">
+    <ol class="steps">
+      <li class="done"><a routerLink="/addcart">Cart</a></li>
+      <li class="on">Delivery</li>
+      <li>Payment</li>
+    </ol>
 
+    <div class="checkout">
+      <form #f="ngForm" (ngSubmit)="submit(f)" novalidate class="surface panel">
+        <h1>Delivery details</h1>
+        <p class="text-muted mb-4">Where should we send your order?</p>
 
-<div class="card mt-50 mb-50">
-    <div class="card-title mx-auto">Cash On Delivery</div>
-    <div class="nav">
-        <ul class="mx-auto">
-        </ul>
+        <div class="row gx-3">
+          <div class="form-group col-sm-6">
+            <label for="fn">First name</label>
+            <input id="fn" name="firstName" class="form-control" [(ngModel)]="form.firstName" #fn="ngModel" required
+              [class.is-invalid]="fn.invalid && fn.touched" autocomplete="given-name" />
+            <div class="invalid-feedback">Please enter your first name.</div>
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="ln">Last name</label>
+            <input id="ln" name="lastName" class="form-control" [(ngModel)]="form.lastName" autocomplete="family-name" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="ph">Phone number</label>
+          <div class="input-group">
+            <span class="input-group-text">+91</span>
+            <input id="ph" name="phone" type="tel" class="form-control" [(ngModel)]="form.phone" #ph="ngModel" required
+              pattern="[0-9]{10}" placeholder="10-digit mobile number" [class.is-invalid]="ph.invalid && ph.touched"
+              autocomplete="tel-national" />
+            <div class="invalid-feedback">Enter a valid 10-digit phone number.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="ad">Address</label>
+          <input id="ad" name="address" class="form-control" [(ngModel)]="form.address" #ad="ngModel" required
+            placeholder="House no., street, area" [class.is-invalid]="ad.invalid && ad.touched" autocomplete="street-address" />
+          <div class="invalid-feedback">Please enter your address.</div>
+        </div>
+
+        <div class="row gx-3">
+          <div class="form-group col-sm-6">
+            <label for="ct">City</label>
+            <input id="ct" name="city" class="form-control" [(ngModel)]="form.city" #ct="ngModel" required
+              [class.is-invalid]="ct.invalid && ct.touched" autocomplete="address-level2" />
+            <div class="invalid-feedback">Please enter your city.</div>
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="ds">District</label>
+            <input id="ds" name="district" class="form-control" [(ngModel)]="form.district" />
+          </div>
+        </div>
+
+        <div class="row gx-3">
+          <div class="form-group col-sm-6">
+            <label for="st">State</label>
+            <input id="st" name="state" class="form-control" [(ngModel)]="form.state" #st="ngModel" required
+              [class.is-invalid]="st.invalid && st.touched" autocomplete="address-level1" />
+            <div class="invalid-feedback">Please enter your state.</div>
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="pc">Pincode</label>
+            <input id="pc" name="pincode" inputmode="numeric" class="form-control" [(ngModel)]="form.pincode" #pc="ngModel"
+              required pattern="[0-9]{6}" [class.is-invalid]="pc.invalid && pc.touched" autocomplete="postal-code" />
+            <div class="invalid-feedback">Enter a 6-digit pincode.</div>
+          </div>
+        </div>
+
+        <h2 class="h-sub">Payment method</h2>
+        <div class="methods">
+          <label class="method" [class.on]="method === 'cod'">
+            <input type="radio" name="method" value="cod" [(ngModel)]="method" />
+            <i class="bi bi-cash-coin"></i>
+            <span><strong>Cash on delivery</strong><small>Pay when your order arrives</small></span>
+          </label>
+          <label class="method" [class.on]="method === 'online'">
+            <input type="radio" name="method" value="online" [(ngModel)]="method" />
+            <i class="bi bi-credit-card"></i>
+            <span><strong>Pay online</strong><small>Card, GPay, PhonePe, Paytm</small></span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg w-100 mt-4">
+          {{ method === 'cod' ? 'Place order' : 'Continue to payment' }}
+          <i class="bi bi-arrow-right ms-1"></i>
+        </button>
+      </form>
+
+      <app-mini-summary></app-mini-summary>
     </div>
-    <form> <span id="card-header">First Name</span>
-        <div class="row row-1">
-            <div class="col-8"> <input type="text" placeholder="Enter Your First Name"> </div>
-        </div>
-        <span id="card-header">Last Name</span>
-        <div class="row row-1">
-            <div class="col-8"> <input type="text" placeholder="Enter Your Last Name"> </div>
-        </div>
-        <span id="card-header">Phone No:</span>
-        <div class="row row-1">
-            <div class="col"> <input type="number" placeholder="***** 9090"> </div>
-        </div>
-        <span id="card-header">Address</span>
-        <div class="row row-1">
-            <div class="col-8"> <input type="text" placeholder="Enter Your Address"> </div>
-        </div>
-        <span id="card-header">District</span>
-        <div class="row row-1">
-            <div class="col-8"> <input type="text" placeholder="Enter Your District"> </div>
-        </div>
-        <span id="card-header">City</span>
-        <div class="row row-1">
-            <div class="col-8"> <input type="text" placeholder="Enter Your City"> </div>
-        </div>
-        <span id="card-header">State</span>
-        <div class="row row-1">
-            <div class="col-8"> <input type="text" placeholder="Enter Your State"> </div>
-        </div>
-        <span id="card-header">Pincode</span>
-        <div class="row row-1">
-            <div class="col"> <input type="number" placeholder="Enter Your Pincode"> </div>
-        </div>
-
-        <div class="row">
-            <div class="d-grid gap-2">
-                <div class="close mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Click To
-                    Confirm</div>
-            </div>
-
-        </div>
-    </form>
-    &nbsp;
-    <h2 style="margin: auto;">--OR--</h2>
-
-    &nbsp;&nbsp;&nbsp;
-    <button class="but" type="button" routerLink="/pay">Click To Payment</button>
+  </div>
 </div>
-
-<app-regards></app-regards>

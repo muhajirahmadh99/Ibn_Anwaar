@@ -1,27 +1,17 @@
-
- <!-- <marquee behavior="" direction=""> <img src="assets/giphy.gif" alt="Nature" class="responsive"></marquee> -->
-
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="d-flex justify-content-center">
-                    <div>
-                        <img src="assets/giphy.gif" alt="Nature" class="responsive">
-                        <!-- <h4 class="mt-2">Cart Successfully Added.</h4> -->
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <!-- <i class="bi bi-x-circle-fill" (click)="close()"></i> -->
-                    <button type="btn" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
+<div class="page">
+  <div class="container">
+    <div class="surface box fade-up">
+      <div class="check"><i class="bi bi-check-lg"></i></div>
+      <span class="eyebrow">Order placed</span>
+      <h1>JazakAllahu khairan!</h1>
+      <p class="text-muted">
+        Your order <strong class="text-body">#{{ orderNo }}</strong> has been confirmed. We'll send you an update as soon
+        as it ships.
+      </p>
+      <div class="actions">
+        <a routerLink="/track" class="btn btn-primary btn-lg"><i class="bi bi-truck me-1"></i> Track order</a>
+        <a routerLink="/home" class="btn btn-outline-dark btn-lg">Continue shopping</a>
+      </div>
     </div>
+  </div>
 </div>
-        

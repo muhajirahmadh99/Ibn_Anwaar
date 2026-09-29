@@ -1,0 +1,48 @@
+// Shared by login and register
+.auth {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(184, 137, 59, 0.12), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(31, 77, 58, 0.1), transparent 40%);
+  min-height: calc(100vh - var(--header-h) - 120px);
+  display: flex;
+  align-items: center;
+}
+
+.input-icon .invalid-feedback {
+  position: static;
+}
+
+.peek {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  border-radius: 50%;
+
+  i {
+    position: static;
+    transform: none;
+  }
+
+  &:hover {
+    color: var(--ink);
+  }
+}
+
+.switch {
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 20px 0 0;
+}
+
+.terms {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  margin: 14px 0 0;
+}

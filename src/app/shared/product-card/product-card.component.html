@@ -1,0 +1,31 @@
+<article class="card-p">
+  <a class="media" [routerLink]="['/view', product.id]" [attr.aria-label]="product.name">
+    <img [src]="product.image" [alt]="product.name" loading="lazy" />
+    <span class="badge-sale" *ngIf="discount">-{{ discount }}%</span>
+  </a>
+
+  <button
+    type="button"
+    class="like"
+    [class.on]="liked"
+    (click)="liked = !liked"
+    [attr.aria-pressed]="liked"
+    aria-label="Add to wishlist"
+  >
+    <i class="bi" [ngClass]="liked ? 'bi-heart-fill' : 'bi-heart'"></i>
+  </button>
+
+  <div class="body">
+    <span class="cat">{{ product.category }}</span>
+    <a class="name" [routerLink]="['/view', product.id]">{{ product.name }}</a>
+    <div class="row-b">
+      <div class="price">
+        {{ product.price | currency: 'USD' }}
+        <del *ngIf="discount">{{ product.oldPrice | currency: 'USD' }}</del>
+      </div>
+      <button type="button" class="btn btn-primary btn-icon" (click)="addToCart()" aria-label="Add to cart" title="Add to cart">
+        <i class="bi bi-bag-plus"></i>
+      </button>
+    </div>
+  </div>
+</article>

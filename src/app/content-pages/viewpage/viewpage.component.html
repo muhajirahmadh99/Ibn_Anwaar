@@ -1,13 +1,91 @@
-<div class="container mt-4 mb-4 bg-light">
-    <!-- <h1 class="text-center mt-3">Customer Favorite <span class="highlight">Cars</span> </h1> -->
-    <!-- <a routerLink="/menu" class="placeorder">Back</a> -->
-    <div class="row">
-        <div class="col-lg-6 mt-3" *ngIf="menudata">
-            <div class="carbox">
-                <img src="{{menudata[0].head}}" />
-                <h1>{{menudata[0].carimg}}</h1>
-                <p>{{menudata[0].price}}</p>
-            </div>
-           
+<div class="page">
+  <div class="container" *ngIf="product; else notFound">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a routerLink="/home">Home</a>
+      <i class="bi bi-chevron-right"></i>
+      <a [routerLink]="'/' + product.category" class="text-capitalize">{{ product.category }}</a>
+      <i class="bi bi-chevron-right"></i>
+      <span>{{ product.name }}</span>
+    </nav>
+
+    <div class="detail">
+      <div class="gallery surface">
+        <span class="badge-sale" *ngIf="discount > 0">-{{ discount }}%</span>
+        <img [src]="product.image" [alt]="product.name" />
+      </div>
+
+      <div class="info">
+        <span class="eyebrow">{{ product.category }}</span>
+        <h1>{{ product.name }}</h1>
+
+        <div class="rating">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+          ><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+          <span>4.5 · 120 reviews</span>
         </div>
-        
+
+        <div class="price big">
+          {{ product.price | currency: 'USD' }}
+          <del *ngIf="discount > 0">{{ product.oldPrice | currency: 'USD' }}</del>
+          <span class="save" *ngIf="discount > 0">You save {{ product.oldPrice - product.price | currency: 'USD' }}</span>
+        </div>
+
+        <div class="block">
+          <div class="label">Size</div>
+          <div class="sizes">
+            <button
+              type="button"
+              *ngFor="let s of sizes"
+              [class.on]="s === size"
+              (click)="size = s"
+              [attr.aria-pressed]="s === size"
+            >
+              {{ s }}
+            </button>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="label">Quantity</div>
+          <div class="buy">
+            <div class="qty">
+              <button type="button" (click)="qty = qty > 1 ? qty - 1 : 1" aria-label="Decrease">
+                <i class="bi bi-dash"></i>
+              </button>
+              <span>{{ qty }}</span>
+              <button type="button" (click)="qty = qty + 1" aria-label="Increase"><i class="bi bi-plus"></i></button>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg flex-grow-1" (click)="addToCart()">
+              <i class="bi bi-bag-plus me-1"></i> Add to cart
+            </button>
+          </div>
+          <button type="button" class="btn btn-outline-dark btn-lg w-100 mt-2" (click)="buyNow()">Buy now</button>
+        </div>
+
+        <ul class="feats">
+          <li><i class="bi bi-truck"></i> Delivery in 4–7 days across India</li>
+          <li><i class="bi bi-cash-coin"></i> Cash on delivery available</li>
+          <li><i class="bi bi-arrow-repeat"></i> Easy 7-day returns</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="section pb-0" *ngIf="related.length">
+      <div class="section-head">
+        <h2>You may also like</h2>
+      </div>
+      <div class="product-grid">
+        <app-product-card *ngFor="let p of related" [product]="p"></app-product-card>
+      </div>
+    </section>
+  </div>
+
+  <ng-template #notFound>
+    <div class="container text-center empty">
+      <i class="bi bi-search"></i>
+      <h1>Product not found</h1>
+      <p class="text-muted">It may have sold out or moved.</p>
+      <a routerLink="/home" class="btn btn-primary">Back to shop</a>
+    </div>
+  </ng-template>
+</div>

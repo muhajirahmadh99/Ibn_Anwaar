@@ -1,215 +1,153 @@
-// scroll to top
-.arrow {
-	display: flex;
-	justify-content: flex-end;
-	cursor: pointer;
-	position: fixed;
-	right: 10px;
-	bottom: 10px;
-	transform: translatey(0px);
-	animation: float 2s cubic-bezier(0.39, -0.08, 0.58, 1) infinite;
-
-	@keyframes float {
-		0% {
-			transform: translatey(0px);
-		}
-
-		50% {
-			transform: translatey(-20px);
-		}
-
-		100% {
-			transform: translatey(0px);
-		}
-	}
-
-	.bi {
-		font-size: 34px;
-		color: #4185af;
-	}
+.perks {
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  padding: 28px 0;
 }
 
-// scroll to top
+.perks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.footer-distributed {
-	background: #000000;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
-	width: 100%;
-	text-align: left;
-	font: bold 16px sans-serif;
-	padding: 55px 50px;
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right {
-	display: inline-block;
-	vertical-align: top;
+.perk {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  i {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand-50);
+    color: var(--brand);
+    font-size: 20px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+  }
+
+  strong {
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  span {
+    color: var(--muted);
+    font-size: 13px;
+  }
 }
 
-/* Footer left */
+.site-footer {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.72);
+  padding: 56px 0 24px;
+  font-size: 14px;
 
-.footer-distributed .footer-left {
-	width: 40%;
+  a {
+    color: rgba(255, 255, 255, 0.72);
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
 }
 
-/* The company logo */
+.cols {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.6fr;
+  gap: 40px;
 
-.footer-distributed h3 {
-	color: #ffffff;
-	font: normal 36px 'Open Sans', cursive;
-	margin: 0;
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 575px) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  > div:not(.about):not(.contact) a {
+    display: block;
+    padding: 4px 0;
+  }
 }
 
-.footer-distributed h3 span {
-	color: lightseagreen;
+h4 {
+  font-family: inherit;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
 }
 
-/* Footer links */
-
-.footer-distributed .footer-links {
-	color: #ffffff;
-	margin: 20px 0 12px;
-	padding: 0;
+.logo img {
+  height: 44px;
+  border-radius: 4px;
+  margin-bottom: 16px;
 }
 
-.footer-distributed .footer-links a {
-	display: inline-block;
-	line-height: 1.8;
-	font-weight: 400;
-	text-decoration: none;
-	color: inherit;
+.about p {
+  max-width: 320px;
 }
 
-.footer-distributed .footer-company-name {
-	color: #f0eeee;
-	font-size: 14px;
-	font-weight: normal;
-	margin: 0;
+.social {
+  display: flex;
+  gap: 8px;
+
+  a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: #fff;
+      color: var(--ink);
+    }
+  }
 }
 
-/* Footer Center */
+.contact p {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  word-break: break-word;
 
-.footer-distributed .footer-center {
-	width: 35%;
+  i {
+    color: var(--gold);
+  }
 }
 
-.footer-distributed .footer-center i {
-	color: #ffffff;
-	font-size: 25px;
-	width: 38px;
-	height: 38px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 42px;
-	margin: 10px 15px;
-	vertical-align: middle;
-}
-
-.footer-distributed .footer-center i.bi-envelope {
-	font-size: 17px;
-	line-height: 38px;
-}
-
-.footer-distributed .footer-center p {
-	display: inline-block;
-	color: #ffffff;
-	font-weight: 400;
-	vertical-align: middle;
-	margin: 0;
-}
-
-.footer-distributed .footer-center p span {
-	display: block;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 2;
-}
-
-.footer-distributed .footer-center p a {
-	color: lightseagreen;
-	text-decoration: none;
-	;
-}
-
-.footer-distributed .footer-links a:before {
-	content: "|";
-	font-weight: 300;
-	font-size: 20px;
-	left: 0;
-	color: #fff;
-	display: inline-block;
-	padding-right: 5px;
-}
-
-.footer-distributed .footer-links .link-1:before {
-	content: none;
-}
-
-/* Footer Right */
-
-.footer-distributed .footer-right {
-	width: 20%;
-}
-
-.footer-distributed .footer-company-about {
-	line-height: 20px;
-	color: #92999f;
-	font-size: 13px;
-	font-weight: normal;
-	margin: 0;
-}
-
-.footer-distributed .footer-company-about span {
-	display: block;
-	color: #ffffff;
-	font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
-
-.footer-distributed .footer-icons {
-	margin-top: 25px;
-}
-
-.footer-distributed .footer-icons a {
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-
-	border-radius: 2px;
-
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 35px;
-
-	margin-right: 3px;
-	margin-bottom: 5px;
-}
-
-/* If you don't want the footer to be responsive, remove these media queries */
-
-@media (max-width: 880px) {
-
-	.footer-distributed {
-		font: bold 14px sans-serif;
-	}
-
-	.footer-distributed .footer-left,
-	.footer-distributed .footer-center,
-	.footer-distributed .footer-right {
-		display: block;
-		width: 100%;
-		margin-bottom: 40px;
-		text-align: center;
-	}
-
-	.footer-distributed .footer-center i {
-		margin-left: 0;
-	}
-
+.bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
 }

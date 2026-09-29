@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { gsap } from 'gsap';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
+  team = [
+    { name: 'Muhajir Ahmadh', role: 'CEO · Founder' },
+    { name: 'Sheikh Shiham', role: 'Co-founder' },
+    { name: 'Sirajuddeen', role: 'Co-founder' },
+    { name: 'Sheikh', role: 'Co-founder' },
+  ];
 
-  constructor() { }
-
-  ngOnInit(): void {
-    const timeline = gsap.timeline({ defaults:{duration : 0.8}})
-    timeline
-      
-      .from('.row',{y: 160,stagger:0.1,ease : "back"})
+  initials(name: string): string {
+    return name
+      .split(' ')
+      .map((w) => w[0])
+      .slice(0, 2)
+      .join('');
   }
-
 }

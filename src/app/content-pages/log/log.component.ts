@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log',
   templateUrl: './log.component.html',
-  styleUrls: ['./log.component.scss']
+  styleUrls: ['./log.component.scss'],
 })
-export class LogComponent implements OnInit {
+export class LogComponent {
+  email = '';
+  password = '';
+  remember = true;
+  show = false;
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
+  submit(f: NgForm) {
+    if (f.invalid) {
+      f.control.markAllAsTouched();
+      return;
+    }
+    this.router.navigate(['/home']);
   }
-
 }

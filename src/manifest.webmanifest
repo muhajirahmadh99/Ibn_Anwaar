@@ -1,8 +1,8 @@
 {
   "name": "IbnAnwaar",
   "short_name": "IbnAnwaar",
-  "theme_color": "#4185af",
-  "background_color": "#fafafa",
+  "theme_color": "#1f4d3a",
+  "background_color": "#faf7f2",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

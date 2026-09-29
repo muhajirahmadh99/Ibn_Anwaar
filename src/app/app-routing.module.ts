@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LogComponent } from './content-pages/log/log.component';
-import { HeaderComponent } from './header&footer/header/header.component';
-import { FooterComponent } from './header&footer/footer/footer.component';
 import { MainComponent } from './content-pages/main/main.component';
 import { RegisterComponent } from './content-pages/register/register.component';
 import { MenComponent } from './content-pages/men/men.component';
@@ -34,7 +32,7 @@ const routes: Routes = [
     path :'log',component:LogComponent
   },
   {
-    path :'view',component:ViewpageComponent
+    path :'view/:id',component:ViewpageComponent
   },
   {
     path :'register',component:RegisterComponent
@@ -68,6 +66,9 @@ const routes: Routes = [
   },
   {
     path :'track',component:TrackComponent
+  },
+  {
+    path :'**', redirectTo : 'home'
   }
 ];
 
